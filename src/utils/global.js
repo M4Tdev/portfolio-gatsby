@@ -7,17 +7,23 @@ export default createGlobalStyle`
 		box-sizing: border-box;
 		font-family: 'Montserrat', sans-serif;
 		outline: none;
-		color: white;
 	}
 
 	html {
 		font-size: 62.5%;
+		color: white;
 	}
 
 	body {
 		font-size: 1rem;
 		--primaryLight: ${props => props.theme.colors.mainLightBlue};
 		--primaryDark: ${props => props.theme.colors.mainDarkBlue};
+		--customBlack: ${props => props.theme.colors.neroBlack};
+		--customWhite: ${props => props.theme.colors.offWhite};
+		--regular: ${props => props.theme.fontWeight.regular};
+		--medium: ${props => props.theme.fontWeight.medium};
+		--semiBold: ${props => props.theme.fontWeight.semiBold};
+		--bold: ${props => props.theme.fontWeight.bold};
 	}
 
 	button {
