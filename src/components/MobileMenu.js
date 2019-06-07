@@ -5,18 +5,16 @@ import { Times } from 'styled-icons/fa-solid';
 
 const StyledMobileMenu = styled.div`
   position: fixed;
-  min-width: 60vw;
-  width: 60%;
-  min-height: 100vh;
+  width: 100%;
   height: 100%;
   background-color: var(--customBlack);
   top: 0;
-  right: -60%;
+  left: -100%;
   z-index: 20;
   transition: transform 0.1s ease;
 
   &.open {
-    transform: translateX(-100%);
+    transform: translateX(100%);
   }
 `;
 

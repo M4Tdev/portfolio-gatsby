@@ -47,7 +47,7 @@ const Navbar = props => {
             <StyledBurger />
           </StyledMenuToggle>
           <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-          {isMenuOpen ? <Backdrop toggleMenu={toggleMenu} /> : null}
+          {/* {isMenuOpen ? <Backdrop toggleMenu={toggleMenu} /> : null} */}
         </>
       ) : null}
     </StyledNavbar>
