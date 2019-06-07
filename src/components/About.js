@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Shape from '../assets/Slice1.svg';
+import Shape from '../assets/Vector1.svg';
 import SectionName from './UI/SectionName';
 
 const StyledAbout = styled.div`
