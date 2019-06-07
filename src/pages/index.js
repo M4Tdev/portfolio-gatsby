@@ -26,10 +26,6 @@ const IndexPage = () => {
         <GlobalStyles />
         <Helmet>
           <title>{data.site.siteMetadata.title}</title>
-          <link
-            href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Pacifico&display=swap"
-            rel="stylesheet"
-          />
         </Helmet>
         <Hero />
       </div>
