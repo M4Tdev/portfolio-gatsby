@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Bars } from 'styled-icons/fa-solid';
 
 import MobileMenu from './MobileMenu';
+import Backdrop from './Backdrop';
 
 const StyledNavbar = styled.div`
   position: relative;
@@ -48,6 +49,7 @@ const Navbar = props => {
           <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         </>
       ) : null}
+      {isMenuOpen ? <Backdrop toggleMenu={toggleMenu} /> : null}
     </StyledNavbar>
   );
 };

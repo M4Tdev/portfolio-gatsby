@@ -13,6 +13,7 @@ const StyledMobileMenu = styled.div`
   top: 0;
   right: -60%;
   z-index: 1;
+  transition: transform 0.1s ease;
 
   &.open {
     transform: translateX(-100%);
