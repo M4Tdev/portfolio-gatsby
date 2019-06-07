@@ -8,6 +8,7 @@ import GlobalStyles from '../utils/global';
 import theme from '../utils/theme';
 
 import Hero from '../components/Hero';
+import About from '../components/About';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -28,6 +29,7 @@ const IndexPage = () => {
           <title>{data.site.siteMetadata.title}</title>
         </Helmet>
         <Hero />
+        <About />
       </div>
     </ThemeProvider>
   );
