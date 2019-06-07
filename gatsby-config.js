@@ -8,5 +8,5 @@ module.exports = {
   siteMetadata: {
     title: 'Mateusz Lesiuk | Front-End Developer',
   },
-  plugins: ['gatsby-plugin-react-helmet', 'gatsby-plugin-sass'],
+  plugins: ['gatsby-plugin-react-helmet', 'gatsby-plugin-styled-components'],
 };

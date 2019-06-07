@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "babel-eslint": "^10.0.1",
+    "babel-plugin-styled-components": "^1.10.0",
     "env-cmd": "^9.0.2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -27,12 +28,13 @@
     "gatsby": "^2.8.3",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sass": "^2.0.11",
+    "gatsby-plugin-styled-components": "^3.0.7",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "styled-components": "^4.2.1",
+    "styled-components": "^4.3.1",
     "styled-icons": "^8.1.0"
   },
   "devDependencies": {
