@@ -12,7 +12,7 @@ const StyledMobileMenu = styled.div`
   background-color: var(--customBlack);
   top: 0;
   right: -60%;
-  z-index: 1;
+  z-index: 2;
   transition: transform 0.1s ease;
 
   &.open {
