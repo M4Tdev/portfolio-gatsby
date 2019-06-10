@@ -9,6 +9,7 @@ import theme from '../utils/theme';
 
 import Hero from '../components/Hero';
 import About from '../components/About';
+import Portfolio from '../components/Portfolio';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -30,6 +31,7 @@ const IndexPage = () => {
         </Helmet>
         <Hero />
         <About />
+        <Portfolio />
       </div>
     </ThemeProvider>
   );

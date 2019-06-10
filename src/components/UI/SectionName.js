@@ -11,13 +11,13 @@ const StyledDiv = styled.div`
   align-items: center;
   position: relative;
   box-sizing: border-box;
-  margin: 3rem 0 0 3rem;
+  margin: ${props => props.margin};
 
   &::after {
     content: '';
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    top: 0.5rem;
+    left: 0.5rem;
     z-index: -1;
     width: inherit;
     height: inherit;
@@ -27,14 +27,14 @@ const StyledDiv = styled.div`
 
 const StyledParagraph = styled.p`
   color: white;
-  font-size: 2rem;
+  font-size: ${props => props.fontsize};
   font-weight: var(--bold);
   position: relative;
 `;
 
 const SectionName = props => (
-  <StyledDiv width={props.width} height={props.height}>
-    <StyledParagraph>{props.children}</StyledParagraph>
+  <StyledDiv width={props.width} height={props.height} margin={props.margin}>
+    <StyledParagraph fontsize={props.fontsize}>{props.children}</StyledParagraph>
   </StyledDiv>
 );
 
