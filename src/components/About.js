@@ -23,10 +23,11 @@ const StyledShape = styled(Shape)`
   z-index: -1;
 `;
 
-const StyledContent = styled.p`
+const StyledContent = styled.div`
   font-size: 1.5rem;
   font-weight: var(--regular);
-  margin: 3rem 2rem 6rem 6rem;
+  width: 80%;
+  margin: 3rem auto 6rem;
 `;
 
 const About = () => {
