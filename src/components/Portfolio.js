@@ -52,6 +52,8 @@ const Portfolio = () => {
             frontmatter {
               title
               stack
+              liveLink
+              sourceLink
               img {
                 childImageSharp {
                   fluid(maxWidth: 1080) {
@@ -91,7 +93,7 @@ const Portfolio = () => {
       </PortfolioSection>
       <PortfolioSection>
         <PortfolioSectionTitle>Projects</PortfolioSectionTitle>
-        <StyledLine />
+        <StyledLine width="12rem" />
         <PortfolioSectionProjects>
           {data.allMarkdownRemark.edges.map(project => (
             <PortfolioProject key={project.node.frontmatter.title} project={project} />
