@@ -103,4 +103,5 @@ const Portfolio = () => {
     </StyledPortfolio>
   );
 };
+
 export default Portfolio;
