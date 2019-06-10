@@ -43,6 +43,19 @@ module.exports = {
         path: `${__dirname}/src/content`,
       },
     },
-    { resolve: 'gatsby-transformer-remark' },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_self',
+              rel: 'nofollow',
+            },
+          },
+        ],
+      },
+    },
   ],
 };
