@@ -1,6 +1,8 @@
 ---
 title: Notey
 stack: React - Redux - Styled Components - Firebase
+liveLink: https://notey.mateuszlesiuk.dev
+sourceLink: https://github.com/M4Tdev/Notey
 img: "./notey.png"
 ---
 

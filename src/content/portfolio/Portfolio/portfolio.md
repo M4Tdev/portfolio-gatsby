@@ -1,6 +1,8 @@
 ---
 title: Portfolio
-stack: Gatsby - Graphql
+stack: Gatsby - Graphql - Styled Components
+liveLink: https://mateuszlesiuk.dev
+sourceLink: https://github.com/M4Tdev/portfolio-gatsby
 img: "./portfolio.png"
 ---
 
