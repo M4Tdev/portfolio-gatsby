@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 
-const StyledPortfolioProject = styled.div`
+const Project = styled.div`
   width: 95%;
   text-align: center;
   margin: 1rem auto;
   box-sizing: border-box;
 `;
 
-const PortfolioProjectTitle = styled.h2`
+const ProjectTitle = styled.h2`
   position: relative;
   font-size: 1.6rem;
   font-weight: var(--semiBold);
@@ -17,12 +17,12 @@ const PortfolioProjectTitle = styled.h2`
   margin: 2rem auto 1rem;
 `;
 
-const PortfolioProjectImage = styled(Img)`
+const ProjectImage = styled(Img)`
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
   width: 100%;
 `;
 
-const PortfolioProjectStack = styled.p`
+const ProjectStack = styled.p`
   font-size: 1.2rem;
   margin-top: 1rem;
   color: rgba(255, 255, 255, 0.7);
@@ -60,10 +60,10 @@ const ProjectLink = styled.a`
 `;
 
 const PortfolioProject = props => (
-  <StyledPortfolioProject>
-    <PortfolioProjectTitle>{props.project.node.frontmatter.title}</PortfolioProjectTitle>
-    <PortfolioProjectImage fluid={props.project.node.frontmatter.img.childImageSharp.fluid} />
-    <PortfolioProjectStack>{props.project.node.frontmatter.stack}</PortfolioProjectStack>
+  <Project>
+    <ProjectTitle>{props.project.node.frontmatter.title}</ProjectTitle>
+    <ProjectImage fluid={props.project.node.frontmatter.img.childImageSharp.fluid} />
+    <ProjectStack>{props.project.node.frontmatter.stack}</ProjectStack>
     <ProjectDescription dangerouslySetInnerHTML={{ __html: props.project.node.html }} />
     <ProjectLinkWrapper>
       <ProjectLink href={props.project.node.frontmatter.liveLink} target="_blank">
@@ -73,7 +73,7 @@ const PortfolioProject = props => (
         Source
       </ProjectLink>
     </ProjectLinkWrapper>
-  </StyledPortfolioProject>
+  </Project>
 );
 
 export default PortfolioProject;
