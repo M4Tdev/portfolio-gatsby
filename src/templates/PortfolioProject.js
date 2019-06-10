@@ -66,8 +66,12 @@ const PortfolioProject = props => (
     <PortfolioProjectStack>{props.project.node.frontmatter.stack}</PortfolioProjectStack>
     <ProjectDescription dangerouslySetInnerHTML={{ __html: props.project.node.html }} />
     <ProjectLinkWrapper>
-      <ProjectLink href={props.project.node.frontmatter.liveLink}>Live</ProjectLink>
-      <ProjectLink href={props.project.node.frontmatter.sourceLink}>Source</ProjectLink>
+      <ProjectLink href={props.project.node.frontmatter.liveLink} target="_blank">
+        Live
+      </ProjectLink>
+      <ProjectLink href={props.project.node.frontmatter.sourceLink} target="_blank">
+        Source
+      </ProjectLink>
     </ProjectLinkWrapper>
   </StyledPortfolioProject>
 );
