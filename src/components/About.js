@@ -6,7 +6,7 @@ import Shape from '../assets/Vector1.svg';
 import SectionName from './UI/SectionName';
 
 const StyledAbout = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: white;
   position: relative;
@@ -20,14 +20,13 @@ const StyledShape = styled(Shape)`
   position: absolute;
   left: 0;
   bottom: 0;
-  margin-left: -6rem;
   z-index: -1;
 `;
 
 const StyledContent = styled.p`
   font-size: 1.5rem;
   font-weight: var(--regular);
-  margin: 3rem 1rem 0 7rem;
+  margin: 3rem 2rem 6rem 6rem;
 `;
 
 const About = () => {
