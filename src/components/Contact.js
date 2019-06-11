@@ -12,6 +12,9 @@ const StyledContact = styled.div`
   height: 100%;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const StyledShape = styled(Shape)`
@@ -23,15 +26,11 @@ const StyledShape = styled(Shape)`
 `;
 
 const ContactContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   width: 100%;
-  min-height: 70vh;
   height: 100%;
   color: black;
   box-sizing: border-box;
+  text-align: center;
 `;
 
 const ContactText = styled.p`
@@ -42,6 +41,7 @@ const ContactText = styled.p`
 const ContactEmail = styled.p`
   font-size: 1.8rem;
   font-weight: var(--semiBold);
+  margin-top: 4rem;
 `;
 
 const ContactSocialAccounts = styled.div`
@@ -49,6 +49,7 @@ const ContactSocialAccounts = styled.div`
   width: 100%;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 7rem;
 `;
 
 const IconWrapper = styled.div`
