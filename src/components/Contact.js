@@ -43,6 +43,12 @@ const ContactEmail = styled.p`
   font-size: 1.8rem;
   font-weight: var(--semiBold);
   margin-top: 4rem;
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
 `;
 
 const ContactSocialAccounts = styled.div`
@@ -56,6 +62,10 @@ const ContactSocialAccounts = styled.div`
 const IconWrapper = styled.div`
   color: #181616;
   width: 4rem;
+
+  & a {
+    color: inherit;
+  }
 `;
 
 const FooterLogo = styled.h2`
@@ -98,16 +108,26 @@ const Contact = () => {
       </SectionName>
       <ContactContentWrapper>
         <ContactText>Get in touch via email or social media:</ContactText>
-        <ContactEmail>{data.file.childMarkdownRemark.frontmatter.email}</ContactEmail>
+        <ContactEmail>
+          <a href={`mailto:${data.file.childMarkdownRemark.frontmatter.email}`}>
+            {data.file.childMarkdownRemark.frontmatter.email}
+          </a>
+        </ContactEmail>
         <ContactSocialAccounts>
           <IconWrapper>
-            <Linkedin />
+            <a href={data.file.childMarkdownRemark.frontmatter.linkedin} target="_blank" rel="noopener noreferrer">
+              <Linkedin />
+            </a>
           </IconWrapper>
           <IconWrapper>
-            <Github />
+            <a href={data.file.childMarkdownRemark.frontmatter.github} target="_blank" rel="noopener noreferrer">
+              <Github />
+            </a>
           </IconWrapper>
           <IconWrapper>
-            <Twitter />
+            <a href={data.file.childMarkdownRemark.frontmatter.twitter} target="_blank" rel="noopener noreferrer">
+              <Twitter />
+            </a>
           </IconWrapper>
         </ContactSocialAccounts>
       </ContactContentWrapper>
