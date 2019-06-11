@@ -22,6 +22,7 @@ const StyledShape = styled(Shape)`
   top: 0;
   left: 0;
   z-index: -1;
+  max-width: 100%;
 `;
 
 const ContactContentWrapper = styled.div`
@@ -39,6 +40,10 @@ const ContactText = styled.p`
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.8rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    font-size: 2.2rem;
+  }
 `;
 
 const ContactEmail = styled.p`
@@ -55,6 +60,10 @@ const ContactEmail = styled.p`
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 2rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    font-size: 2.2rem;
+  }
 `;
 
 const ContactSocialAccounts = styled.div`
@@ -66,6 +75,10 @@ const ContactSocialAccounts = styled.div`
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     margin-top: 7.5rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    margin-top: 8rem;
   }
 `;
 
@@ -79,6 +92,10 @@ const IconWrapper = styled.div`
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     width: 4.5rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    width: 5rem;
   }
 `;
 

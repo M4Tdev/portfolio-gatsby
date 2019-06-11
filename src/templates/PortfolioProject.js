@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 const Project = styled.div`
   width: 95%;
   text-align: center;
-  margin: 1rem auto;
+  margin: 1rem auto 3rem;
   box-sizing: border-box;
 `;
 
@@ -19,10 +19,14 @@ const ProjectTitle = styled.h2`
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 2rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    font-size: 2.2rem;
+  }
 `;
 
 const ProjectImage = styled(Img)`
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.3);
   width: 100%;
 `;
 
@@ -35,6 +39,10 @@ const ProjectStack = styled.p`
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.4rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    font-size: 1.6rem;
+  }
 `;
 
 const ProjectDescription = styled.p`
@@ -45,16 +53,25 @@ const ProjectDescription = styled.p`
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.6rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    font-size: 1.8rem;
+  }
 `;
 
 const ProjectLinkWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  margin-top: 1rem;
+  margin: 1rem auto 0;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     margin-top: 2rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    font-size: 3rem;
+    width: 80%;
   }
 `;
 
@@ -76,6 +93,10 @@ const ProjectLink = styled.a`
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     padding: 1.4rem 2.6rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    padding: 1.6rem 3rem;
   }
 `;
 

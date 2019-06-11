@@ -21,6 +21,7 @@ const StyledShape = styled(Shape)`
   left: 0;
   bottom: 0;
   z-index: -1;
+  max-width: 100%;
 `;
 
 const Wrapper = styled.div`
@@ -28,6 +29,11 @@ const Wrapper = styled.div`
   margin: 3rem auto 6rem;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
+    margin: 4rem auto 4rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    width: 75%;
     margin: 4rem auto 4rem;
   }
 `;
@@ -45,8 +51,7 @@ const CurrentStack = styled.div`
   margin-top: 3rem;
   border-radius: 1rem;
   padding: 2rem;
-  box-shadow: 0 0 1rem rgba(45, 116, 229, 0.3);
-  /* text-align: center; */
+  box-shadow: 1.5rem 1.5rem 3rem rgba(0, 0, 0, 0.3);
 
   & h2 {
     font-weight: var(--semiBold);
@@ -54,8 +59,9 @@ const CurrentStack = styled.div`
 
   & p {
     font-size: 1.4rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     font-weight: var(--medium);
+    text-align: center;
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
@@ -65,6 +71,19 @@ const CurrentStack = styled.div`
 
     & p {
       font-size: 1.5rem;
+    }
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    margin-top: 6rem;
+    padding: 3rem;
+
+    & h2 {
+      font-size: 1.7rem;
+    }
+
+    & p {
+      font-size: 1.6rem;
     }
   }
 `;
