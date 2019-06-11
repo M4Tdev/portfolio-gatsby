@@ -10,20 +10,38 @@ const StyledNavbar = styled.div`
   width: 100vw;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+`;
+
+const InnerWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    width: 90%;
+    margin: 3rem auto 0;
+  }
 `;
 
 const StyledLogo = styled.h1`
   font-family: 'Pacifico', sans-serif;
   font-size: 2.4rem;
   font-weight: var(--regular);
-  margin: 3rem 0 0 3rem;
+  margin: 0 0 0 3rem;
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    margin: 0;
+  }
 `;
 
 const StyledMenuToggle = styled.button`
   background-color: white;
   height: 3rem;
   width: 3rem;
-  margin: 3rem 3rem 0 0;
+  margin: 0 3rem 0 0;
   background: none;
   border: none;
 `;
@@ -41,17 +59,19 @@ const Navbar = props => {
 
   return (
     <StyledNavbar>
-      <StyledLogo>Mateusz Lesiuk</StyledLogo>
-      {props.isMobile ? (
-        <>
-          <StyledMenuToggle onClick={() => toggleMenu(!isMenuOpen)}>
-            <StyledBurger />
-          </StyledMenuToggle>
-          <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-        </>
-      ) : (
-        <DesktopMenu />
-      )}
+      <InnerWrapper>
+        <StyledLogo>Mateusz Lesiuk</StyledLogo>
+        {props.isMobile ? (
+          <>
+            <StyledMenuToggle onClick={() => toggleMenu(!isMenuOpen)}>
+              <StyledBurger />
+            </StyledMenuToggle>
+            <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          </>
+        ) : (
+          <DesktopMenu />
+        )}
+      </InnerWrapper>
     </StyledNavbar>
   );
 };
