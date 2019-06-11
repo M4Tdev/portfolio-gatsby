@@ -27,20 +27,22 @@ const StyledShape = styled(Shape)`
 const Wrapper = styled.div`
   width: 80%;
   margin: 3rem auto 6rem;
+  z-index: 1;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
-    margin: 4rem auto 4rem;
+    margin: 4rem auto 6rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.small} {
     width: 75%;
-    margin: 4rem auto 4rem;
+    margin: 4rem auto 5rem;
   }
 `;
 
 const StyledContent = styled.div`
   font-size: 1.5rem;
   font-weight: var(--regular);
+  line-height: 2.5rem;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.6rem;
@@ -52,9 +54,11 @@ const CurrentStack = styled.div`
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 1.5rem 1.5rem 3rem rgba(0, 0, 0, 0.3);
+  background-color: white;
 
   & h2 {
     font-weight: var(--semiBold);
+    font-size: 1.5rem;
   }
 
   & p {
@@ -62,6 +66,7 @@ const CurrentStack = styled.div`
     margin-top: 2rem;
     font-weight: var(--medium);
     text-align: center;
+    line-height: 2rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
@@ -115,7 +120,7 @@ const About = () => {
           }}
         />
         <CurrentStack>
-          <h2>My current stack of languages/technologies:</h2>
+          <h2>My current stack of languages / technologies:</h2>
           <p>{data.file.childMarkdownRemark.frontmatter.currentStack}</p>
         </CurrentStack>
       </Wrapper>
