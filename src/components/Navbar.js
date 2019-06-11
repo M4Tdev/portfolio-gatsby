@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import { Bars } from 'styled-icons/fa-solid';
 
 import MobileMenu from './MobileMenu';
-import Backdrop from './Backdrop';
+import DesktopMenu from './DesktopMenu';
 
 const StyledNavbar = styled.div`
   position: relative;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
 `;
@@ -47,9 +48,10 @@ const Navbar = props => {
             <StyledBurger />
           </StyledMenuToggle>
           <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-          {/* {isMenuOpen ? <Backdrop toggleMenu={toggleMenu} /> : null} */}
         </>
-      ) : null}
+      ) : (
+        <DesktopMenu />
+      )}
     </StyledNavbar>
   );
 };
