@@ -7,6 +7,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Mateusz Lesiuk | Front-End Developer',
+    author: 'Mateusz Lesiuk',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
