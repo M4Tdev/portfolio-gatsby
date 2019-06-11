@@ -103,7 +103,7 @@ const Contact = () => {
   return (
     <StyledContact>
       <StyledShape />
-      <SectionName width="12rem" height="4rem" fontsize="1.6rem" margin="4rem 0 0 2rem" color="white">
+      <SectionName width="12rem" height="4rem" fontsize="1.6rem" margin="5rem 0 0 2rem" color="white">
         Contact
       </SectionName>
       <ContactContentWrapper>
