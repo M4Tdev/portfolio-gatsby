@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { graphql, useStaticQuery } from 'gatsby';
 import { Linkedin, Github, Twitter } from 'styled-icons/fa-brands';
 
 import Shape from '../assets/Vector3.svg';
@@ -63,33 +64,59 @@ const FooterLogo = styled.h2`
   font-weight: var(--regular);
   color: black;
   display: block;
-  margin: 3rem auto 1rem;
+  margin: 0 auto 1rem;
   text-align: center;
 `;
 
-const Contact = () => (
-  <StyledContact>
-    <StyledShape />
-    <SectionName width="12rem" height="4rem" fontsize="1.6rem" margin="4rem 0 0 2rem" color="white">
-      Contact
-    </SectionName>
-    <ContactContentWrapper>
-      <ContactText>Get in touch via email or social media:</ContactText>
-      <ContactEmail>hello@mateuszlesiuk.dev</ContactEmail>
-      <ContactSocialAccounts>
-        <IconWrapper>
-          <Linkedin />
-        </IconWrapper>
-        <IconWrapper>
-          <Github />
-        </IconWrapper>
-        <IconWrapper>
-          <Twitter />
-        </IconWrapper>
-      </ContactSocialAccounts>
-    </ContactContentWrapper>
-    <FooterLogo>Mateusz Lesiuk</FooterLogo>
-  </StyledContact>
-);
+const FooterCopyright = styled.span`
+  display: block;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+`;
+
+const Contact = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "contact.md" }) {
+        childMarkdownRemark {
+          frontmatter {
+            email
+            linkedin
+            github
+            twitter
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <StyledContact>
+      <StyledShape />
+      <SectionName width="12rem" height="4rem" fontsize="1.6rem" margin="4rem 0 0 2rem" color="white">
+        Contact
+      </SectionName>
+      <ContactContentWrapper>
+        <ContactText>Get in touch via email or social media:</ContactText>
+        <ContactEmail>{data.file.childMarkdownRemark.frontmatter.email}</ContactEmail>
+        <ContactSocialAccounts>
+          <IconWrapper>
+            <Linkedin />
+          </IconWrapper>
+          <IconWrapper>
+            <Github />
+          </IconWrapper>
+          <IconWrapper>
+            <Twitter />
+          </IconWrapper>
+        </ContactSocialAccounts>
+      </ContactContentWrapper>
+      <FooterLogo>
+        Mateusz Lesiuk
+        <FooterCopyright>Copyright © 2019, Mateusz Lesiuk</FooterCopyright>
+      </FooterLogo>
+    </StyledContact>
+  );
+};
 
 export default Contact;
