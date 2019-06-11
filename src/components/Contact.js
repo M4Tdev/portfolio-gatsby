@@ -10,7 +10,6 @@ import SectionName from './UI/SectionName';
 const StyledContact = styled.div`
   width: 100vw;
   min-height: 100vh;
-  height: 100%;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -22,7 +21,6 @@ const StyledShape = styled(Shape)`
   position: absolute;
   top: 0;
   left: 0;
-  margin-left: -2rem;
   z-index: -1;
 `;
 
@@ -37,6 +35,10 @@ const ContactContentWrapper = styled.div`
 const ContactText = styled.p`
   font-size: 1.6rem;
   font-weight: var(--regular);
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    font-size: 1.8rem;
+  }
 `;
 
 const ContactEmail = styled.p`
@@ -49,6 +51,10 @@ const ContactEmail = styled.p`
     text-decoration: none;
     cursor: pointer;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    font-size: 2rem;
+  }
 `;
 
 const ContactSocialAccounts = styled.div`
@@ -57,6 +63,10 @@ const ContactSocialAccounts = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin-top: 7rem;
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    margin-top: 7.5rem;
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -65,6 +75,10 @@ const IconWrapper = styled.div`
 
   & a {
     color: inherit;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    width: 4.5rem;
   }
 `;
 
@@ -76,12 +90,20 @@ const FooterLogo = styled.h2`
   display: block;
   margin: 0 auto 1rem;
   text-align: center;
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    font-size: 2.6rem;
+  }
 `;
 
 const FooterCopyright = styled.span`
   display: block;
   font-size: 1rem;
   margin-top: 0.5rem;
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    font-size: 1.2rem;
+  }
 `;
 
 const Contact = () => {

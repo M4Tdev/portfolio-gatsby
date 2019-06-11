@@ -15,6 +15,10 @@ const ProjectTitle = styled.h2`
   font-weight: var(--semiBold);
   font-style: italic;
   margin: 2rem auto 1rem;
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    font-size: 2rem;
+  }
 `;
 
 const ProjectImage = styled(Img)`
@@ -27,12 +31,20 @@ const ProjectStack = styled.p`
   margin-top: 1rem;
   color: rgba(255, 255, 255, 0.7);
   font-weight: var(--regular);
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    font-size: 1.4rem;
+  }
 `;
 
 const ProjectDescription = styled.p`
   font-size: 1.4rem;
   font-weight: var(--medium);
   margin-top: 1rem;
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    font-size: 1.6rem;
+  }
 `;
 
 const ProjectLinkWrapper = styled.div`
@@ -40,6 +52,10 @@ const ProjectLinkWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin-top: 1rem;
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    margin-top: 2rem;
+  }
 `;
 
 const ProjectLink = styled.a`
@@ -56,6 +72,10 @@ const ProjectLink = styled.a`
   &:hover {
     background-color: transparent;
     color: white;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    padding: 1.4rem 2.6rem;
   }
 `;
 

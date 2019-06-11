@@ -9,7 +9,8 @@ const StyledPortfolio = styled.div`
   position: relative;
   width: 100vw;
   height: auto;
-  background: linear-gradient(150.64deg, #119cf5 0%, #2d74e5 27%);
+  /* background: linear-gradient(150.64deg, #119cf5 0%, #2d74e5 23%); */
+  background-color: #2d74e5;
   z-index: 2;
 `;
 

@@ -26,11 +26,19 @@ const StyledShape = styled(Shape)`
 const Wrapper = styled.div`
   width: 80%;
   margin: 3rem auto 6rem;
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    margin: 4rem auto 4rem;
+  }
 `;
 
 const StyledContent = styled.div`
   font-size: 1.5rem;
   font-weight: var(--regular);
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    font-size: 1.6rem;
+  }
 `;
 
 const CurrentStack = styled.div`
@@ -48,6 +56,16 @@ const CurrentStack = styled.div`
     font-size: 1.4rem;
     margin-top: 1rem;
     font-weight: var(--medium);
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    & h2 {
+      font-size: 1.6rem;
+    }
+
+    & p {
+      font-size: 1.5rem;
+    }
   }
 `;
 

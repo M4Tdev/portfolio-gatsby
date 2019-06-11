@@ -20,6 +20,10 @@ const StyledHeader = styled.h1`
   margin: 0 auto;
   font-weight: var(--regular);
   font-size: 2.4rem;
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    font-size: 2.6rem;
+  }
 `;
 
 const BoldText = styled.span`
@@ -29,6 +33,10 @@ const BoldText = styled.span`
 const SmallText = styled.span`
   font-size: 1.4rem;
   display: block;
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    font-size: 1.6rem;
+  }
 `;
 
 const StyledArrowWrapper = styled.div`
@@ -63,6 +71,11 @@ const StyledArrow = styled(ChevronDown)`
   &:hover {
     animation: ${smoothMovement} 1s infinite;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    min-height: 4rem;
+    min-width: 3rem;
+  }
 `;
 
 const Hero = () => {
@@ -70,6 +83,8 @@ const Hero = () => {
 
   /* eslint-disable */
   const changeMobile = () => {
+    // FOR TESTS
+    console.log(window.innerWidth / 16);
     // check if passed media query matches with window dimensions
     window.matchMedia('(max-width: 37.5em)').matches
       ? setMobile(true)
