@@ -61,13 +61,19 @@ const MobileMenu = props => (
     </CloseMenuButton>
     <MenuInnerWrapper>
       <MenuItem>
-        <Link to="/#about">About me</Link>
+        <Link to="/#about" onClick={() => props.toggleMenu(false)}>
+          About me
+        </Link>
       </MenuItem>
       <MenuItem>
-        <Link to="/#portfolio">Portfolio</Link>
+        <Link to="/#portfolio" onClick={() => props.toggleMenu(false)}>
+          Portfolio
+        </Link>
       </MenuItem>
       <MenuItem>
-        <Link to="/#contact">Contact</Link>
+        <Link to="/#contact" onClick={() => props.toggleMenu(false)}>
+          Contact
+        </Link>
       </MenuItem>
     </MenuInnerWrapper>
   </StyledMobileMenu>
