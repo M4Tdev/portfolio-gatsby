@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ChevronDown } from 'styled-icons/fa-solid';
+import { Link } from 'gatsby';
 
 import Navbar from './Navbar';
 
@@ -138,7 +139,9 @@ const Hero = props => (
       <SmallText>a Front-End Developer</SmallText>
     </StyledHeader>
     <StyledArrowWrapper>
-      <StyledArrow />
+      <Link to="#about">
+        <StyledArrow />
+      </Link>
     </StyledArrowWrapper>
   </StyledHero>
 );
