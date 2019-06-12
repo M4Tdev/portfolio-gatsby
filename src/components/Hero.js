@@ -36,6 +36,10 @@ const StyledHeader = styled.h1`
   @media ${({ theme }) => theme.mediaQueries.medium} {
     font-size: 4.5rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.large} {
+    font-size: 6rem;
+  }
 `;
 
 const BoldText = styled.span`
@@ -60,6 +64,10 @@ const SmallText = styled.span`
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
     font-size: 2.8rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.large} {
+    font-size: 3.2rem;
   }
 `;
 
@@ -115,9 +123,7 @@ const Hero = () => {
     // FOR TESTS
     console.log(window.innerWidth / 16);
     // check if passed media query matches with window dimensions
-    window.matchMedia('(max-width: 37.5em)').matches
-      ? setMobile(true)
-      : setMobile(false);
+    window.matchMedia('(max-width: 37.5em)').matches ? setMobile(true) : setMobile(false);
   };
   /* eslint-enable */
 

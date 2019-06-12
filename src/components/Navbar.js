@@ -31,6 +31,10 @@ const InnerWrapper = styled.div`
   @media ${({ theme }) => theme.mediaQueries.medium} {
     margin-top: 5rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.large} {
+    margin-top: 6rem;
+  }
 `;
 
 const StyledLogo = styled.h1`
@@ -49,6 +53,10 @@ const StyledLogo = styled.h1`
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
     font-size: 4rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.large} {
+    font-size: 5rem;
   }
 `;
 
