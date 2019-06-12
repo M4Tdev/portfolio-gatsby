@@ -31,9 +31,9 @@ const StyledDiv = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    width: 23rem;
-    height: 6.5rem;
-    margin: 8rem 0 0 8rem;
+    width: 18rem;
+    height: 5rem;
+    margin: 7rem 0 0 8rem;
   }
 `;
 
@@ -48,7 +48,7 @@ const StyledParagraph = styled.p`
   }
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    font-size: 2.6rem;
+    font-size: 2rem;
   }
 `;
 

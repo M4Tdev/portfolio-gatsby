@@ -40,6 +40,10 @@ const StyledHeader = styled.h1`
   @media ${({ theme }) => theme.mediaQueries.large} {
     font-size: 6rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    font-size: 4.8rem;
+  }
 `;
 
 const BoldText = styled.span`
@@ -68,6 +72,10 @@ const SmallText = styled.span`
 
   @media ${({ theme }) => theme.mediaQueries.large} {
     font-size: 3.2rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    font-size: 2rem;
   }
 `;
 
@@ -112,6 +120,11 @@ const StyledArrow = styled(ChevronDown)`
   @media ${({ theme }) => theme.mediaQueries.medium} {
     min-height: 5rem;
     min-width: 4rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    min-height: 3.5rem;
+    min-width: 2.5rem;
   }
 `;
 

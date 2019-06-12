@@ -22,6 +22,10 @@ const MenuWrapper = styled.ul`
   @media ${({ theme }) => theme.mediaQueries.large} {
     font-size: 3rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    font-size: 2.4rem;
+  }
 `;
 
 const ListItem = styled.li`
@@ -35,6 +39,14 @@ const ListItem = styled.li`
   & a {
     color: inherit;
     text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: white;
+      color: var(--primaryLight);
+    }
   }
 
   @media ${({ theme }) => theme.mediaQueries.small} {
@@ -51,6 +63,10 @@ const ListItem = styled.li`
 
   @media ${({ theme }) => theme.mediaQueries.large} {
     margin-right: 4rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    margin-right: 5rem;
   }
 `;
 

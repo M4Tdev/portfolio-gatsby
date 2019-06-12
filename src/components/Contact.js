@@ -56,6 +56,10 @@ const ContactText = styled.p`
   @media ${({ theme }) => theme.mediaQueries.large} {
     font-size: 4.5rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    font-size: 3rem;
+  }
 `;
 
 const ContactEmail = styled.p`
@@ -89,6 +93,10 @@ const ContactEmail = styled.p`
     font-size: 3.5rem;
     margin-top: 6rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    font-size: 2.6rem;
+  }
 `;
 
 const ContactSocialAccounts = styled.div`
@@ -120,6 +128,10 @@ const ContactSocialAccounts = styled.div`
     margin-top: 20rem;
     width: 70%;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    width: 40%;
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -149,6 +161,10 @@ const IconWrapper = styled.div`
   @media ${({ theme }) => theme.mediaQueries.large} {
     width: 7rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    width: 5rem;
+  }
 `;
 
 const FooterLogo = styled.h2`
@@ -171,6 +187,10 @@ const FooterLogo = styled.h2`
   @media ${({ theme }) => theme.mediaQueries.medium} {
     font-size: 4.5rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    font-size: 2.5rem;
+  }
 `;
 
 const FooterCopyright = styled.span`
@@ -188,6 +208,10 @@ const FooterCopyright = styled.span`
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
     font-size: 2rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    font-size: 1.5rem;
   }
 `;
 

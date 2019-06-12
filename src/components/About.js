@@ -50,6 +50,11 @@ const Wrapper = styled.div`
   @media ${({ theme }) => theme.mediaQueries.large} {
     margin-top: 12rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    margin-top: 5rem;
+    width: 60%;
+  }
 `;
 
 const StyledContent = styled.div`
@@ -73,6 +78,11 @@ const StyledContent = styled.div`
   @media ${({ theme }) => theme.mediaQueries.large} {
     font-size: 3.5rem;
     line-height: 4rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 `;
 
@@ -153,6 +163,23 @@ const CurrentStack = styled.div`
       margin-top: 4rem;
       font-size: 2.8rem;
       line-height: 3.6rem;
+    }
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    margin-top: 6rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+    & h2 {
+      font-size: 2.3rem;
+      text-align: center;
+    }
+
+    & p {
+      font-size: 2rem;
+      line-height: 2.6rem;
     }
   }
 `;
