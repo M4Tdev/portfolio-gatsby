@@ -115,38 +115,19 @@ const StyledArrow = styled(ChevronDown)`
   }
 `;
 
-const Hero = () => {
-  const [isMobile, setMobile] = useState(null);
-
-  /* eslint-disable */
-  const changeMobile = () => {
-    // FOR TESTS
-    console.log(window.innerWidth / 16);
-    // check if passed media query matches with window dimensions
-    window.matchMedia('(max-width: 37.5em)').matches ? setMobile(true) : setMobile(false);
-  };
-  /* eslint-enable */
-
-  useEffect(() => {
-    changeMobile();
-    window.addEventListener('resize', changeMobile);
-    return () => window.removeEventListener('resize', changeMobile);
-  }, []);
-
-  return (
-    <StyledHero>
-      <Navbar isMobile={isMobile} />
-      <StyledHeader>
-        Hi, <br />
-        I'm <BoldText>Mateusz Lesiuk</BoldText>
-        <br />
-        <SmallText>a Front-End Developer</SmallText>
-      </StyledHeader>
-      <StyledArrowWrapper>
-        <StyledArrow />
-      </StyledArrowWrapper>
-    </StyledHero>
-  );
-};
+const Hero = props => (
+  <StyledHero>
+    <Navbar isMobile={props.isMobile} />
+    <StyledHeader>
+      Hi, <br />
+      I'm <BoldText>Mateusz Lesiuk</BoldText>
+      <br />
+      <SmallText>a Front-End Developer</SmallText>
+    </StyledHeader>
+    <StyledArrowWrapper>
+      <StyledArrow />
+    </StyledArrowWrapper>
+  </StyledHero>
+);
 
 export default Hero;
