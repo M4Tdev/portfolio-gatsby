@@ -11,6 +11,7 @@ module.exports = {
     description: 'Portfolio of Mateusz Lesiuk the Front-End Developer',
   },
   plugins: [
+    'gatsby-plugin-netlify',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {
