@@ -20,6 +20,10 @@ const PortfolioSection = styled.div`
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
     width: 80%;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    width: 90%;
+  }
 `;
 
 const PortfolioSectionProjects = styled.div`

@@ -27,11 +27,38 @@ const ProjectTitle = styled.h2`
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
     font-size: 2.6rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    font-size: 3rem;
+  }
+`;
+
+const ProjectFlexDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 `;
 
 const ProjectImage = styled(Img)`
   box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.3);
   width: 100%;
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    flex-basis: 48%;
+  }
+`;
+
+const ProjectContent = styled.div`
+  width: 100%;
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    flex-basis: 48%;
+  }
 `;
 
 const ProjectStack = styled.p`
@@ -123,17 +150,21 @@ const ProjectLink = styled.a`
 const PortfolioProject = props => (
   <Project>
     <ProjectTitle>{props.project.node.frontmatter.title}</ProjectTitle>
-    <ProjectImage fluid={props.project.node.frontmatter.img.childImageSharp.fluid} />
-    <ProjectStack>{props.project.node.frontmatter.stack}</ProjectStack>
-    <ProjectDescription dangerouslySetInnerHTML={{ __html: props.project.node.html }} />
-    <ProjectLinkWrapper>
-      <ProjectLink href={props.project.node.frontmatter.liveLink} target="_blank">
-        Live
-      </ProjectLink>
-      <ProjectLink href={props.project.node.frontmatter.sourceLink} target="_blank">
-        Source
-      </ProjectLink>
-    </ProjectLinkWrapper>
+    <ProjectFlexDiv>
+      <ProjectImage fluid={props.project.node.frontmatter.img.childImageSharp.fluid} />
+      <ProjectContent>
+        <ProjectStack>{props.project.node.frontmatter.stack}</ProjectStack>
+        <ProjectDescription dangerouslySetInnerHTML={{ __html: props.project.node.html }} />
+        <ProjectLinkWrapper>
+          <ProjectLink href={props.project.node.frontmatter.liveLink} target="_blank">
+            Live
+          </ProjectLink>
+          <ProjectLink href={props.project.node.frontmatter.sourceLink} target="_blank">
+            Source
+          </ProjectLink>
+        </ProjectLinkWrapper>
+      </ProjectContent>
+    </ProjectFlexDiv>
   </Project>
 );
 

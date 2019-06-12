@@ -14,6 +14,10 @@ const MenuWrapper = styled.ul`
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
     font-size: 2rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    font-size: 2.8rem;
+  }
 `;
 
 const ListItem = styled.li`
@@ -35,6 +39,10 @@ const ListItem = styled.li`
 
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
     margin-right: 2.7rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    margin-right: 2.8rem;
   }
 `;
 
