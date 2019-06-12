@@ -83,6 +83,11 @@ const ProjectStack = styled.p`
     font-size: 1.8rem;
   }
 
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
   @media ${({ theme }) => theme.mediaQueries.large} {
     font-size: 2.5rem;
   }
@@ -103,6 +108,11 @@ const ProjectDescription = styled.p`
 
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
     font-size: 2rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    font-size: 2.3rem;
+    margin-top: 2rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
@@ -128,9 +138,13 @@ const ProjectLinkWrapper = styled.div`
     width: 70%;
   }
 
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    width: 80%;
+    margin-top: 3rem;
+  }
+
   @media ${({ theme }) => theme.mediaQueries.large} {
     margin-top: 5rem;
-    width: 80%;
   }
 `;
 
@@ -161,6 +175,10 @@ const ProjectLink = styled.a`
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
     padding: 1.8rem 4rem;
     font-size: 1.6rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    font-size: 2rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
