@@ -18,11 +18,14 @@ const InnerWrapper = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  margin-top: 3rem;
+  margin: 3rem auto 0;
 
   @media ${({ theme }) => theme.mediaQueries.small} {
     width: 90%;
-    margin: 3rem auto 0;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    width: 85%;
   }
 `;
 
@@ -34,6 +37,10 @@ const StyledLogo = styled.h1`
 
   @media ${({ theme }) => theme.mediaQueries.small} {
     margin: 0;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    font-size: 3rem;
   }
 `;
 

@@ -28,6 +28,10 @@ const StyledHeader = styled.h1`
   @media ${({ theme }) => theme.mediaQueries.small} {
     font-size: 2.8rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    font-size: 3rem;
+  }
 `;
 
 const BoldText = styled.span`
@@ -44,6 +48,10 @@ const SmallText = styled.span`
 
   @media ${({ theme }) => theme.mediaQueries.small} {
     font-size: 1.8rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    font-size: 2rem;
   }
 `;
 

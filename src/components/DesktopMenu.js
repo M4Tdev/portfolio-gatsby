@@ -3,12 +3,16 @@ import styled from 'styled-components';
 
 const MenuWrapper = styled.ul`
   list-style-type: none;
-  margin: 0 3rem 0 0;
+  margin: 0;
   font-size: 1.8rem;
   font-weight: var(--medium);
 
   @media ${({ theme }) => theme.mediaQueries.small} {
-    margin: 0;
+    font-size: 1.9rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    font-size: 2rem;
   }
 `;
 
@@ -23,6 +27,14 @@ const ListItem = styled.li`
   & a {
     color: inherit;
     text-decoration: none;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    margin-right: 2.6rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    margin-right: 2.7rem;
   }
 `;
 

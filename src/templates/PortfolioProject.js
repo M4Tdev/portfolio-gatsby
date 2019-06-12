@@ -23,6 +23,10 @@ const ProjectTitle = styled.h2`
   @media ${({ theme }) => theme.mediaQueries.small} {
     font-size: 2.2rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    font-size: 2.6rem;
+  }
 `;
 
 const ProjectImage = styled(Img)`
@@ -43,6 +47,10 @@ const ProjectStack = styled.p`
   @media ${({ theme }) => theme.mediaQueries.small} {
     font-size: 1.6rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    font-size: 1.8rem;
+  }
 `;
 
 const ProjectDescription = styled.p`
@@ -57,6 +65,10 @@ const ProjectDescription = styled.p`
   @media ${({ theme }) => theme.mediaQueries.small} {
     font-size: 1.8rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    font-size: 2rem;
+  }
 `;
 
 const ProjectLinkWrapper = styled.div`
@@ -70,8 +82,11 @@ const ProjectLinkWrapper = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.small} {
-    font-size: 3rem;
     width: 80%;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    width: 70%;
   }
 `;
 
@@ -97,6 +112,11 @@ const ProjectLink = styled.a`
 
   @media ${({ theme }) => theme.mediaQueries.small} {
     padding: 1.6rem 3rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    padding: 1.8rem 4rem;
+    font-size: 1.6rem;
   }
 `;
 
