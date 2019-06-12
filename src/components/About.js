@@ -174,9 +174,7 @@ const About = () => {
   return (
     <StyledAbout id="about">
       <StyledShape />
-      <SectionName width="12rem" height="4rem" fontsize="1.6rem" margin="2rem 0 0 2rem" color="black">
-        About me
-      </SectionName>
+      <SectionName>About me</SectionName>
       <Wrapper>
         <StyledContent
           dangerouslySetInnerHTML={{

@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-  width: ${props => props.width};
-  height: ${props => props.height};
+  width: 12rem;
+  height: 4rem;
   background-color: transparent;
   border: 2px solid var(--customBlack);
   display: inline-flex;
@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
   align-items: center;
   position: relative;
   box-sizing: border-box;
-  margin: ${props => props.margin};
+  margin: 2rem 0 0 2rem;
 
   &::after {
     content: '';
@@ -23,18 +23,38 @@ const StyledDiv = styled.div`
     height: inherit;
     background-color: var(--primaryLight);
   }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    width: 18rem;
+    height: 5rem;
+    margin: 6rem 0 0 6rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    width: 23rem;
+    height: 6.5rem;
+    margin: 8rem 0 0 8rem;
+  }
 `;
 
 const StyledParagraph = styled.p`
   color: white;
-  font-size: ${props => props.fontsize};
+  font-size: 1.6rem;
   font-weight: var(--bold);
   position: relative;
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    font-size: 2rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    font-size: 2.6rem;
+  }
 `;
 
 const SectionName = props => (
-  <StyledDiv width={props.width} height={props.height} margin={props.margin}>
-    <StyledParagraph fontsize={props.fontsize}>{props.children}</StyledParagraph>
+  <StyledDiv>
+    <StyledParagraph>{props.children}</StyledParagraph>
   </StyledDiv>
 );
 
