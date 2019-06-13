@@ -14,10 +14,11 @@ const ProjectTitle = styled.h2`
   font-size: 1.6rem;
   font-weight: var(--semiBold);
   font-style: italic;
-  margin: 2rem auto 3rem;
+  margin: 2rem auto 2rem;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 2rem;
+    margin-bottom: 2rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.small} {
@@ -30,6 +31,7 @@ const ProjectTitle = styled.h2`
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
     font-size: 3rem;
+    margin-botom: 6rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
@@ -76,6 +78,7 @@ const ProjectDescription = styled.div`
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.6rem;
+    margin-top: 2rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.small} {
@@ -160,7 +163,7 @@ const ProjectLinkWrapper = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.largest} {
-    width: 50%;
+    width: 60%;
   }
 `;
 

@@ -37,7 +37,11 @@ const CloseMenuIcon = styled(Times)`
 
 const MenuInnerWrapper = styled.ul`
   width: 100%;
-  margin: 10rem 0 0 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  margin: 0;
   padding: 0;
   text-align: center;
   list-style-type: none;
@@ -46,7 +50,7 @@ const MenuInnerWrapper = styled.ul`
 const MenuItem = styled.li`
   font-size: 2.4rem;
   font-weight: var(--medium);
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 
   & a {
     text-decoration: none;

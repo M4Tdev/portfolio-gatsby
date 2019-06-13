@@ -16,6 +16,13 @@ const StyledAbout = styled.div`
   overflow: hidden;
 `;
 
+const InnerWrapper = styled.div`
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    width: 85%;
+    margin: 0 auto;
+  }
+`;
+
 const StyledShape = styled(Shape)`
   position: absolute;
   left: 0;
@@ -26,7 +33,7 @@ const StyledShape = styled(Shape)`
 
 const Wrapper = styled.div`
   width: 80%;
-  margin: 3rem auto 6rem;
+  margin: 3rem auto 5rem;
   z-index: 1;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
@@ -60,7 +67,10 @@ const Wrapper = styled.div`
 const StyledContent = styled.div`
   font-size: 1.5rem;
   font-weight: var(--regular);
-  line-height: 2.5rem;
+
+  & p {
+    margin: 1.6rem 0;
+  }
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.6rem;
@@ -72,26 +82,20 @@ const StyledContent = styled.div`
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
     font-size: 3rem;
-    line-height: 3.5rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
     font-size: 3.5rem;
-    line-height: 4rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.largest} {
     font-size: 2rem;
-    line-height: 2.5rem;
   }
 `;
 
 const CurrentStack = styled.div`
   margin-top: 3rem;
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 1.5rem 1.5rem 3rem rgba(0, 0, 0, 0.3);
-  background-color: white;
+  text-align: center;
 
   & h2 {
     font-weight: var(--semiBold);
@@ -99,7 +103,7 @@ const CurrentStack = styled.div`
   }
 
   & p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-top: 2rem;
     font-weight: var(--medium);
     text-align: center;
@@ -200,19 +204,21 @@ const About = () => {
 
   return (
     <StyledAbout id="about">
-      <StyledShape />
-      <SectionName colorstyle="normal">About me</SectionName>
-      <Wrapper>
-        <StyledContent
-          dangerouslySetInnerHTML={{
-            __html: data.file.childMarkdownRemark.html,
-          }}
-        />
-        <CurrentStack>
-          <h2>My current stack of languages / technologies:</h2>
-          <p>{data.file.childMarkdownRemark.frontmatter.currentStack}</p>
-        </CurrentStack>
-      </Wrapper>
+      <InnerWrapper>
+        <StyledShape />
+        <SectionName colorstyle="normal">About me</SectionName>
+        <Wrapper>
+          <StyledContent
+            dangerouslySetInnerHTML={{
+              __html: data.file.childMarkdownRemark.html,
+            }}
+          />
+          <CurrentStack>
+            <h2>My current stack of technologies:</h2>
+            <p>{data.file.childMarkdownRemark.frontmatter.currentStack}</p>
+          </CurrentStack>
+        </Wrapper>
+      </InnerWrapper>
     </StyledAbout>
   );
 };

@@ -12,9 +12,18 @@ const StyledContact = styled.div`
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+`;
+
+const InnerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 100vh;
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    width: 85%;
+    margin: 0 auto;
+  }
 `;
 
 const StyledShape = styled(Shape)`
@@ -34,7 +43,7 @@ const ContactContentWrapper = styled.div`
 `;
 
 const ContactText = styled.p`
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: var(--regular);
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
@@ -63,7 +72,7 @@ const ContactText = styled.p`
 `;
 
 const ContactEmail = styled.p`
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: var(--semiBold);
   margin-top: 4rem;
 
@@ -136,7 +145,7 @@ const ContactSocialAccounts = styled.div`
 
 const IconWrapper = styled.div`
   color: #181616;
-  width: 4rem;
+  width: 3.5rem;
 
   & a {
     color: inherit;
@@ -169,11 +178,10 @@ const IconWrapper = styled.div`
 
 const FooterLogo = styled.h2`
   font-family: 'Pacifico', sans-serif;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: var(--regular);
   color: black;
-  display: block;
-  margin: 0 auto 1rem;
+  margin-bottom: 1rem;
   text-align: center;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
@@ -195,7 +203,7 @@ const FooterLogo = styled.h2`
 
 const FooterCopyright = styled.span`
   display: block;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-top: 0.5rem;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
@@ -233,37 +241,39 @@ const Contact = () => {
 
   return (
     <StyledContact id="contact">
-      <StyledShape />
-      <SectionName colorstyle="normal">Contact</SectionName>
-      <ContactContentWrapper>
-        <ContactText>Get in touch via email or social media:</ContactText>
-        <ContactEmail>
-          <a href={`mailto:${data.file.childMarkdownRemark.frontmatter.email}`}>
-            {data.file.childMarkdownRemark.frontmatter.email}
-          </a>
-        </ContactEmail>
-        <ContactSocialAccounts>
-          <IconWrapper>
-            <a href={data.file.childMarkdownRemark.frontmatter.linkedin} target="_blank" rel="noopener noreferrer">
-              <Linkedin />
+      <InnerWrapper>
+        <StyledShape />
+        <SectionName colorstyle="normal">Contact</SectionName>
+        <ContactContentWrapper>
+          <ContactText>Get in touch via email or social media:</ContactText>
+          <ContactEmail>
+            <a href={`mailto:${data.file.childMarkdownRemark.frontmatter.email}`}>
+              {data.file.childMarkdownRemark.frontmatter.email}
             </a>
-          </IconWrapper>
-          <IconWrapper>
-            <a href={data.file.childMarkdownRemark.frontmatter.github} target="_blank" rel="noopener noreferrer">
-              <Github />
-            </a>
-          </IconWrapper>
-          <IconWrapper>
-            <a href={data.file.childMarkdownRemark.frontmatter.twitter} target="_blank" rel="noopener noreferrer">
-              <Twitter />
-            </a>
-          </IconWrapper>
-        </ContactSocialAccounts>
-      </ContactContentWrapper>
-      <FooterLogo>
-        Mateusz Lesiuk
-        <FooterCopyright>Copyright © 2019, Mateusz Lesiuk</FooterCopyright>
-      </FooterLogo>
+          </ContactEmail>
+          <ContactSocialAccounts>
+            <IconWrapper>
+              <a href={data.file.childMarkdownRemark.frontmatter.linkedin} target="_blank" rel="noopener noreferrer">
+                <Linkedin />
+              </a>
+            </IconWrapper>
+            <IconWrapper>
+              <a href={data.file.childMarkdownRemark.frontmatter.github} target="_blank" rel="noopener noreferrer">
+                <Github />
+              </a>
+            </IconWrapper>
+            <IconWrapper>
+              <a href={data.file.childMarkdownRemark.frontmatter.twitter} target="_blank" rel="noopener noreferrer">
+                <Twitter />
+              </a>
+            </IconWrapper>
+          </ContactSocialAccounts>
+        </ContactContentWrapper>
+        <FooterLogo>
+          Mateusz Lesiuk
+          <FooterCopyright>Copyright © 2019, Mateusz Lesiuk</FooterCopyright>
+        </FooterLogo>
+      </InnerWrapper>
     </StyledContact>
   );
 };

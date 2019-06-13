@@ -44,7 +44,7 @@ const InnerWrapper = styled.div`
 
 const StyledLogo = styled.h1`
   font-family: 'Pacifico', sans-serif;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: var(--regular);
   margin: 0 0 0 3rem;
 

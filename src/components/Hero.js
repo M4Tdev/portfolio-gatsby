@@ -31,7 +31,7 @@ const StyledHeader = styled.h1`
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
@@ -64,7 +64,7 @@ const SmallText = styled.span`
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
