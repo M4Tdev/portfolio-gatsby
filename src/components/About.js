@@ -72,6 +72,12 @@ const StyledContent = styled.div`
     margin: 1.6rem 0;
   }
 
+  & a {
+    text-decoration-color: var(--primaryDark);
+    color: inherit;
+    font-weight: var(--medium);
+  }
+
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.6rem;
   }
