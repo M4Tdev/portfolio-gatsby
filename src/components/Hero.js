@@ -108,10 +108,7 @@ const StyledArrow = styled(ChevronDown)`
   min-height: 3rem;
   min-width: 2rem;
   cursor: pointer;
-
-  &:hover {
-    animation: ${smoothMovement} 1s infinite;
-  }
+  animation: ${smoothMovement} 1s infinite;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     min-height: 4rem;
