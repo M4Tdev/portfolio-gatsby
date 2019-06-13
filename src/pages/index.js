@@ -17,8 +17,6 @@ const IndexPage = () => {
 
   /* eslint-disable */
   const changeMobile = () => {
-    // FOR TESTS
-    console.log(window.innerWidth / 16);
     // check if passed media query matches with window dimensions
     window.matchMedia('(max-width: 37.5em)').matches ? setMobile(true) : setMobile(false);
   };
