@@ -139,7 +139,7 @@ const Hero = props => (
       <SmallText>a Front-End Developer</SmallText>
     </StyledHeader>
     <StyledArrowWrapper>
-      <Link to="#about">
+      <Link to="/#about">
         <StyledArrow />
       </Link>
     </StyledArrowWrapper>

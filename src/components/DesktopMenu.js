@@ -73,13 +73,13 @@ const ListItem = styled.li`
 const DesktopMenu = () => (
   <MenuWrapper>
     <ListItem>
-      <a href="#about">About me</a>
+      <a href="/#about">About me</a>
     </ListItem>
     <ListItem>
-      <a href="#portfolio">Portfolio</a>
+      <a href="/#portfolio">Portfolio</a>
     </ListItem>
     <ListItem>
-      <a href="#contact">Contact</a>
+      <a href="/#contact">Contact</a>
     </ListItem>
   </MenuWrapper>
 );

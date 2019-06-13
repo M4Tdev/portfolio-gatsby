@@ -69,7 +69,38 @@ const ProjectContent = styled.div`
   }
 `;
 
-const ProjectStack = styled.p`
+const ProjectDescription = styled.div`
+  font-size: 1.4rem;
+  font-weight: var(--medium);
+  margin-top: 1rem;
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    font-size: 1.6rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    font-size: 1.8rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    font-size: 2rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    font-size: 2.3rem;
+    margin-top: 0;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.large} {
+    font-size: 2.8rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    font-size: 2.2rem;
+  }
+`;
+
+const ProjectStack = styled.div`
   font-size: 1.2rem;
   margin-top: 1rem;
   color: rgba(255, 255, 255, 0.7);
@@ -89,7 +120,7 @@ const ProjectStack = styled.p`
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
     font-size: 2rem;
-    margin-top: 0;
+    margin-top: 3rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
@@ -98,37 +129,6 @@ const ProjectStack = styled.p`
 
   @media ${({ theme }) => theme.mediaQueries.largest} {
     font-size: 1.6rem;
-  }
-`;
-
-const ProjectDescription = styled.p`
-  font-size: 1.4rem;
-  font-weight: var(--medium);
-  margin-top: 1rem;
-
-  @media ${({ theme }) => theme.mediaQueries.smallest} {
-    font-size: 1.6rem;
-  }
-
-  @media ${({ theme }) => theme.mediaQueries.small} {
-    font-size: 1.8rem;
-  }
-
-  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
-    font-size: 2rem;
-  }
-
-  @media ${({ theme }) => theme.mediaQueries.medium} {
-    font-size: 2.3rem;
-    margin-top: 2rem;
-  }
-
-  @media ${({ theme }) => theme.mediaQueries.large} {
-    font-size: 2.8rem;
-  }
-
-  @media ${({ theme }) => theme.mediaQueries.largest} {
-    font-size: 2.2rem;
   }
 `;
 
@@ -214,8 +214,8 @@ const PortfolioProject = props => (
     <ProjectFlexDiv>
       <ProjectImage fluid={props.project.node.frontmatter.img.childImageSharp.fluid} />
       <ProjectContent>
-        <ProjectStack>{props.project.node.frontmatter.stack}</ProjectStack>
         <ProjectDescription dangerouslySetInnerHTML={{ __html: props.project.node.html }} />
+        <ProjectStack>{props.project.node.frontmatter.stack}</ProjectStack>
         <ProjectLinkWrapper>
           <ProjectLink href={props.project.node.frontmatter.liveLink} target="_blank">
             Live
