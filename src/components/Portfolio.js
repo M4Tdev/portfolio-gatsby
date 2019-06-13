@@ -64,7 +64,7 @@ const Portfolio = () => {
 
   return (
     <StyledPortfolio id="portfolio">
-      <SectionName>Portfolio</SectionName>
+      <SectionName colorstyle="opposed">Portfolio</SectionName>
       <PortfolioSection>
         <PortfolioSectionProjects>
           {data.allMarkdownRemark.edges.map(project => (

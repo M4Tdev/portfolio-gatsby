@@ -201,7 +201,7 @@ const About = () => {
   return (
     <StyledAbout id="about">
       <StyledShape />
-      <SectionName>About me</SectionName>
+      <SectionName colorstyle="normal">About me</SectionName>
       <Wrapper>
         <StyledContent
           dangerouslySetInnerHTML={{

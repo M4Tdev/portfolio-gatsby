@@ -21,7 +21,7 @@ const StyledDiv = styled.div`
     z-index: -1;
     width: inherit;
     height: inherit;
-    background-color: var(--primaryLight);
+    background-color: ${props => (props.colorstyle === 'normal' ? 'var(--primaryLight)' : 'white')};
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
@@ -38,7 +38,7 @@ const StyledDiv = styled.div`
 `;
 
 const StyledParagraph = styled.p`
-  color: white;
+  color: ${props => (props.colorstyle === 'normal' ? 'white' : 'var(--customBlack)')};
   font-size: 1.6rem;
   font-weight: var(--bold);
   position: relative;
@@ -53,8 +53,8 @@ const StyledParagraph = styled.p`
 `;
 
 const SectionName = props => (
-  <StyledDiv>
-    <StyledParagraph>{props.children}</StyledParagraph>
+  <StyledDiv colorstyle={props.colorstyle}>
+    <StyledParagraph colorstyle={props.colorstyle}>{props.children}</StyledParagraph>
   </StyledDiv>
 );
 
