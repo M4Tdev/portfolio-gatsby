@@ -23,6 +23,7 @@ const ProjectTitle = styled.h2`
 
   @media ${({ theme }) => theme.mediaQueries.small} {
     font-size: 2.2rem;
+    margin-bottom: 3rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
@@ -31,7 +32,7 @@ const ProjectTitle = styled.h2`
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
     font-size: 3rem;
-    margin-botom: 6rem;
+    margin-bottom: 6rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
