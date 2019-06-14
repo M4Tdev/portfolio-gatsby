@@ -1,11 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Helmet from 'react-helmet';
-import { ThemeProvider } from 'styled-components';
-
-import 'normalize.css';
-import GlobalStyles from '../utils/global';
-import theme from '../utils/theme';
+import Layout from '../components/UI/Layout';
 
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -26,9 +22,8 @@ const IndexPage = () => {
   `);
 
   return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <GlobalStyles />
+    <Layout>
+      <>
         <Helmet>
           <title>{data.site.siteMetadata.title}</title>
           <meta charset="UTF-8" />
@@ -43,8 +38,8 @@ const IndexPage = () => {
         <About />
         <Portfolio />
         <Contact />
-      </div>
-    </ThemeProvider>
+      </>
+    </Layout>
   );
 };
 
