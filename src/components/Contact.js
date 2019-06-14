@@ -243,7 +243,9 @@ const Contact = () => {
     <StyledContact id="contact">
       <InnerWrapper>
         <StyledShape />
-        <SectionName colorstyle="normal">Contact</SectionName>
+        <SectionName colorstyle="normal" customMargin="9rem 0 0 8rem">
+          Contact
+        </SectionName>
         <ContactContentWrapper>
           <ContactText>Get in touch via email or social media:</ContactText>
           <ContactEmail>

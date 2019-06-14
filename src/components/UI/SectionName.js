@@ -35,6 +35,10 @@ const StyledDiv = styled.div`
     height: 5rem;
     margin: 7rem 0 0 8rem;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.largest} {
+    margin: ${props => props.customMargin || '7rem 0 0 8rem'};
+  }
 `;
 
 const StyledParagraph = styled.p`
@@ -53,7 +57,7 @@ const StyledParagraph = styled.p`
 `;
 
 const SectionName = props => (
-  <StyledDiv colorstyle={props.colorstyle}>
+  <StyledDiv customMargin={props.customMargin} colorstyle={props.colorstyle}>
     <StyledParagraph colorstyle={props.colorstyle}>{props.children}</StyledParagraph>
   </StyledDiv>
 );
