@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Helmet from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
@@ -13,21 +13,6 @@ import Portfolio from '../components/Portfolio';
 import Contact from '../components/Contact';
 
 const IndexPage = () => {
-  const [isMobile, setMobile] = useState(null);
-
-  /* eslint-disable */
-  const changeMobile = () => {
-    // check if passed media query matches with window dimensions
-    window.matchMedia('(max-width: 37.5em)').matches ? setMobile(true) : setMobile(false);
-  };
-  /* eslint-enable */
-
-  useEffect(() => {
-    changeMobile();
-    window.addEventListener('resize', changeMobile);
-    return () => window.removeEventListener('resize', changeMobile);
-  }, []);
-
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -54,8 +39,8 @@ const IndexPage = () => {
           <meta property="og:site_name" content={data.site.siteMetadata.title} />
           <meta property="og:description" content={data.site.siteMetadata.description} />
         </Helmet>
-        <Hero isMobile={isMobile} />
-        <About isMobile={isMobile} />
+        <Hero />
+        <About />
         <Portfolio />
         <Contact />
       </div>

@@ -128,7 +128,7 @@ const StyledArrow = styled(ChevronDown)`
 
 const Hero = props => (
   <StyledHero>
-    <Navbar isMobile={props.isMobile} />
+    <Navbar />
     <StyledHeader>
       Hi, <br />
       I'm <BoldText>Mateusz Lesiuk</BoldText>

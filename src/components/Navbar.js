@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Bars } from 'styled-icons/fa-solid';
 
 import MobileMenu from './MobileMenu';
 import DesktopMenu from './DesktopMenu';
 
-const StyledNavbar = styled.div`
+const StyledNavbar = styled.nav`
   position: relative;
   width: 100vw;
   display: flex;
@@ -19,6 +19,11 @@ const InnerWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 3rem auto 0;
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+  }
 
   @media ${({ theme }) => theme.mediaQueries.small} {
     width: 90%;
@@ -88,12 +93,28 @@ const StyledBurger = styled(Bars)`
 
 const Navbar = props => {
   const [isMenuOpen, toggleMenu] = useState(false);
+  const [isMobile, setMobile] = useState(null);
+
+  /* eslint-disable */
+  const changeMobile = () => {
+    // check if passed media query matches with window dimensions
+    window.matchMedia('(max-width: 37.5em)').matches ? setMobile(true) : setMobile(false);
+  };
+  /* eslint-enable */
+
+  useEffect(() => {
+    changeMobile();
+    window.addEventListener('resize', changeMobile);
+    return () => window.removeEventListener('resize', changeMobile);
+  }, []);
 
   return (
     <StyledNavbar>
       <InnerWrapper>
-        <StyledLogo>Mateusz Lesiuk</StyledLogo>
-        {props.isMobile ? (
+        <a href="https://mateuszlesiuk.dev">
+          <StyledLogo>Mateusz Lesiuk</StyledLogo>
+        </a>
+        {isMobile ? (
           <>
             <StyledMenuToggle onClick={() => toggleMenu(!isMenuOpen)}>
               <StyledBurger />
