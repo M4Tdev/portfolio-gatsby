@@ -169,8 +169,8 @@ const ProjectLinkWrapper = styled.div`
 
 const ProjectLink = styled.a`
   text-decoration: none;
-  color: var(--customBlack);
-  background-color: white;
+  color: white;
+  background-color: transparent;
   padding: 1rem 2rem;
   border-radius: 1rem;
   border: 0.1rem solid white;
@@ -179,8 +179,8 @@ const ProjectLink = styled.a`
   font-weight: var(--medium);
 
   &:hover {
-    background-color: transparent;
-    color: white;
+    background-color: white;
+    color: var(--customBlack);
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
