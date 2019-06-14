@@ -77,8 +77,9 @@ const StyledContent = styled.div`
     color: #404d5b;
     font-weight: var(--medium);
     border-bottom: 0.1rem solid rgba(52, 73, 94, 0.4);
-    padding: 0.3rem 0.1rem;
+    padding: 0.2rem 0.1rem;
     transition: border-color 0.3s ease, background-color 0.3s ease;
+    line-height: 2.5rem;
 
     &:hover {
       border-bottom: 0.1rem solid rgba(52, 73, 94, 0);
@@ -88,22 +89,42 @@ const StyledContent = styled.div`
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.6rem;
+
+    & a {
+      line-height: 2.6rem;
+    }
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
     font-size: 2.2rem;
+
+    & a {
+      line-height: 3.2rem;
+    }
   }
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
     font-size: 3rem;
+
+    & a {
+      line-height: 4.2rem;
+    }
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
     font-size: 3.5rem;
+
+    & a {
+      line-height: 4.5rem;
+    }
   }
 
   @media ${({ theme }) => theme.mediaQueries.largest} {
     font-size: 2rem;
+
+    & a {
+      line-height: 3rem;
+    }
   }
 `;
 
