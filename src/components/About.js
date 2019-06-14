@@ -73,9 +73,17 @@ const StyledContent = styled.div`
   }
 
   & a {
-    text-decoration-color: var(--primaryDark);
-    color: inherit;
+    text-decoration: none;
+    color: #404d5b;
     font-weight: var(--medium);
+    border-bottom: 0.1rem solid rgba(52, 73, 94, 0.4);
+    padding: 0.3rem 0.1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+      border-bottom: 0.1rem solid rgba(52, 73, 94, 0);
+      background-color: rgba(52, 73, 94, 0.1);
+    }
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
