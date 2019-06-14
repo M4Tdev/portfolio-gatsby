@@ -108,22 +108,31 @@ const Navbar = props => {
     return () => window.removeEventListener('resize', changeMobile);
   }, []);
 
+  const renderMenu = () => {
+    if (isMobile === null) {
+      return null;
+    }
+
+    if (isMobile) {
+      return (
+        <>
+          <StyledMenuToggle onClick={() => toggleMenu(!isMenuOpen)}>
+            <StyledBurger />
+          </StyledMenuToggle>
+          <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        </>
+      );
+    }
+    return <DesktopMenu />;
+  };
+
   return (
     <StyledNavbar>
       <InnerWrapper>
         <a href="https://mateuszlesiuk.dev">
           <StyledLogo>Mateusz Lesiuk</StyledLogo>
         </a>
-        {isMobile ? (
-          <>
-            <StyledMenuToggle onClick={() => toggleMenu(!isMenuOpen)}>
-              <StyledBurger />
-            </StyledMenuToggle>
-            <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-          </>
-        ) : (
-          <DesktopMenu />
-        )}
+        {renderMenu()}
       </InnerWrapper>
     </StyledNavbar>
   );
