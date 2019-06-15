@@ -60,7 +60,7 @@ const ProjectImage = styled(Img)`
   width: 100%;
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    flex-basis: 48%;
+    flex-basis: 52%;
   }
 `;
 
@@ -68,7 +68,7 @@ const ProjectContent = styled.div`
   width: 100%;
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    flex-basis: 48%;
+    flex-basis: 44%;
   }
 `;
 
