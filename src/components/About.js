@@ -73,18 +73,9 @@ const StyledContent = styled.div`
   }
 
   & a {
-    text-decoration: none;
-    color: #404d5b;
+    ${({ theme }) => theme.mixins.link('rgba(52, 73, 94, 0.4)')}
     font-weight: var(--medium);
-    border-bottom: 0.1rem solid rgba(52, 73, 94, 0.4);
-    padding: 0.2rem 0.1rem;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
     line-height: 2.5rem;
-
-    &:hover {
-      border-bottom: 0.1rem solid rgba(52, 73, 94, 0);
-      background-color: rgba(52, 73, 94, 0.1);
-    }
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {

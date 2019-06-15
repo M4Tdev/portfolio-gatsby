@@ -76,17 +76,18 @@ const StyledHeading = styled.h1`
 
 const StyledLink = styled(Link)`
   font-size: 1.4rem;
-  text-decoration: none;
-  border-bottom: 1px solid white;
-  color: #404d5b;
+  ${({ theme }) => theme.mixins.link('white')}
+  /* text-decoration: none; */
+  /* border-bottom: 1px solid white; */
+  /* color: #404d5b; */
   font-weight: var(--medium);
-  padding: 0.2rem 0.1rem;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
+  /* padding: 0.2rem 0.1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease; */
 
-  &:hover {
+  /* &:hover {
     border-bottom: 0.1rem solid rgba(52, 73, 94, 0);
     background-color: rgba(52, 73, 94, 0.1);
-  }
+  } */
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.6rem;
