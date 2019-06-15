@@ -16,6 +16,7 @@ const IndexPage = () => {
           title
           author
           description
+          link
         }
       }
     }
@@ -33,6 +34,8 @@ const IndexPage = () => {
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content={data.site.siteMetadata.title} />
           <meta property="og:description" content={data.site.siteMetadata.description} />
+          <meta property="og:image:secure_url" content={`${data.site.siteMetadata.link}/favicon.ico`} />
+          <meta property="og:url" content={data.site.siteMetadata.link} />
         </Helmet>
         <Hero />
         <About />

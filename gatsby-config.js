@@ -9,6 +9,7 @@ module.exports = {
     title: 'Mateusz Lesiuk | Front-End Developer',
     author: 'Mateusz Lesiuk',
     description: 'Portfolio of Mateusz Lesiuk the Front-End Developer',
+    link: 'https://mateuszlesiuk.dev',
   },
   plugins: [
     'gatsby-plugin-netlify',
