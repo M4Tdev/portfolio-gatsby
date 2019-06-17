@@ -135,8 +135,9 @@ const Hero = () => {
   });
 
   const slideInFromBottom = useSpring({
-    from: { transform: 'translateY(100%)' },
-    to: { transform: 'translateY(0)' },
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    delay: 1000,
   });
 
   return (
