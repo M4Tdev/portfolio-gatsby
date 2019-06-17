@@ -46,7 +46,10 @@ const PortfolioSectionProjects = styled.div`
 const Portfolio = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/content/portfolio/" } }) {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/portfolio/" } }
+        sort: { fields: [frontmatter___order], order: ASC }
+      ) {
         edges {
           node {
             frontmatter {
