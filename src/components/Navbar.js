@@ -110,13 +110,13 @@ const Navbar = () => {
   }, []);
 
   const slideInFromLeft = useSpring({
-    config: config.wobbly,
+    // config: config.wobbly,
     from: { transform: 'translateX(-100%)', opacity: 0 },
     to: { transform: 'translateX(0)', opacity: 1 },
   });
 
   const slideInFromRight = useSpring({
-    config: config.wobbly,
+    // config: config.wobbly,
     from: { transform: 'translateX(100%)' },
     to: { transform: 'translateX(0)' },
   });
