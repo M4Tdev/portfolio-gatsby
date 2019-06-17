@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ChevronDown } from 'styled-icons/fa-solid';
 import { Link } from 'gatsby';
+import { useSpring, animated, config } from 'react-spring';
 
 import Navbar from './Navbar';
 
@@ -16,7 +17,7 @@ const StyledHero = styled.div`
   position: relative;
 `;
 
-const StyledHeader = styled.h1`
+const StyledHeader = styled(animated.h1)`
   align-self: center;
   margin: 0 auto;
   font-weight: var(--regular);
@@ -80,7 +81,7 @@ const SmallText = styled.span`
   }
 `;
 
-const StyledArrowWrapper = styled.div`
+const StyledArrowWrapper = styled(animated.div)`
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -126,21 +127,34 @@ const StyledArrow = styled(ChevronDown)`
   }
 `;
 
-const Hero = props => (
-  <StyledHero>
-    <Navbar />
-    <StyledHeader>
-      Hi, <br />
-      I'm <BoldText>Mateusz Lesiuk</BoldText>
-      <br />
-      <SmallText>a Front-End Developer</SmallText>
-    </StyledHeader>
-    <StyledArrowWrapper>
-      <Link to="/#about">
-        <StyledArrow />
-      </Link>
-    </StyledArrowWrapper>
-  </StyledHero>
-);
+const Hero = () => {
+  const slideInFromLeft = useSpring({
+    config: config.wobbly,
+    from: { transform: 'translateX(-100%)', opacity: 0 },
+    to: { transform: 'translateX(0)', opacity: 1 },
+  });
+
+  const slideInFromBottom = useSpring({
+    from: { transform: 'translateY(100%)' },
+    to: { transform: 'translateY(0)' },
+  });
+
+  return (
+    <StyledHero>
+      <Navbar />
+      <StyledHeader style={slideInFromLeft}>
+        Hi, <br />
+        I'm <BoldText>Mateusz Lesiuk</BoldText>
+        <br />
+        <SmallText>a Front-End Developer</SmallText>
+      </StyledHeader>
+      <StyledArrowWrapper style={slideInFromBottom}>
+        <Link to="/#about">
+          <StyledArrow />
+        </Link>
+      </StyledArrowWrapper>
+    </StyledHero>
+  );
+};
 
 export default Hero;

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Bars } from 'styled-icons/fa-solid';
+import { useSpring, animated } from 'react-spring';
 
 import MobileMenu from './MobileMenu';
 import DesktopMenu from './DesktopMenu';
 
-const StyledNavbar = styled.nav`
+const StyledNavbar = styled(animated.nav)`
   position: relative;
   width: 100vw;
   display: flex;
@@ -108,6 +109,11 @@ const Navbar = props => {
     return () => window.removeEventListener('resize', changeMobile);
   }, []);
 
+  const slideInFromTop = useSpring({
+    from: { transform: 'translateY(-100%)' },
+    to: { transform: 'translateY(0)' },
+  });
+
   const renderMenu = () => {
     if (isMobile === null) {
       return null;
@@ -127,7 +133,7 @@ const Navbar = props => {
   };
 
   return (
-    <StyledNavbar>
+    <StyledNavbar style={slideInFromTop}>
       <InnerWrapper>
         <a href="https://mateuszlesiuk.dev">
           <StyledLogo>Mateusz Lesiuk</StyledLogo>
