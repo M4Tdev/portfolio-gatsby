@@ -1,16 +1,22 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
 import 'normalize.css';
 import GlobalStyles from '../../utils/global';
 import theme from '../../utils/theme';
+import GoToTopButton from './GoToTopButton';
+
+const Wrapper = styled.div`
+  position: relative;
+`;
 
 const Layout = props => (
   <ThemeProvider theme={theme}>
-    <div>
+    <Wrapper>
       <GlobalStyles />
       {props.children}
-    </div>
+      <GoToTopButton />
+    </Wrapper>
   </ThemeProvider>
 );
 
