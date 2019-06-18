@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Bars } from 'styled-icons/fa-solid';
 import { useSpring, useTransition, animated, config } from 'react-spring';
+import { Link } from 'gatsby';
 
 import MobileMenu from './MobileMenu';
 import DesktopMenu from './DesktopMenu';
@@ -43,7 +44,7 @@ const InnerWrapper = styled.div`
   }
 `;
 
-const AnimatedLogo = styled(animated.a)`
+const AnimatedLogo = styled(animated(Link))`
   color: inherit;
   text-decoration: none;
 `;
@@ -109,10 +110,10 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', changeMobile);
   }, []);
 
-  const slideInFromLeft = useSpring({
+  const slideInFromTop = useSpring({
     // config: config.wobbly,
-    from: { transform: 'translateX(-100%)', opacity: 0 },
-    to: { transform: 'translateX(0)', opacity: 1 },
+    from: { transform: 'translateY(-100%)', opacity: 0 },
+    to: { transform: 'translateY(0)', opacity: 1 },
   });
 
   const slideInFromRight = useSpring({
@@ -152,7 +153,7 @@ const Navbar = () => {
   return (
     <StyledNavbar>
       <InnerWrapper>
-        <AnimatedLogo href="https://mateuszlesiuk.dev" style={slideInFromLeft}>
+        <AnimatedLogo to="/" style={slideInFromTop}>
           <StyledLogo>Mateusz Lesiuk</StyledLogo>
         </AnimatedLogo>
         {renderMenu()}

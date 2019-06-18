@@ -62,7 +62,7 @@ const ListItem = styled(animated.li)`
     top: -100%;
     left: 0;
     z-index: -1;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
   }
 
   &:hover::before {
@@ -92,22 +92,20 @@ const ListItem = styled(animated.li)`
 
 const DesktopMenu = () => {
   const states = {
-    from: { transform: 'translateX(100%)', opacity: 0 },
-    to: { transform: 'translateX(0)', opacity: 1 },
+    config: config.wobbly,
+    from: { transform: 'translateY(-300%)', opacity: 0 },
+    to: { transform: 'translateY(0)', opacity: 1 },
   };
   const firstLi = useSpring({
-    config: config.wobbly,
     ...states,
   });
 
   const secondLi = useSpring({
-    config: config.wobbly,
     ...states,
     delay: 100,
   });
 
   const thirdLi = useSpring({
-    config: config.wobbly,
     ...states,
     delay: 150,
   });

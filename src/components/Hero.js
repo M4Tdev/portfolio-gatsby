@@ -48,6 +48,10 @@ const StyledHeader = styled(animated.h1)`
   }
 `;
 
+const AnimatedSpan = styled(animated.span)`
+  display: block;
+`;
+
 const BoldText = styled.span`
   font-weight: var(--bold);
 `;
@@ -128,10 +132,24 @@ const StyledArrow = styled(ChevronDown)`
 `;
 
 const Hero = () => {
-  const slideInFromLeft = useSpring({
+  const styles = {
     config: config.wobbly,
-    from: { transform: 'translateX(-100%)', opacity: 0 },
+    from: { display: 'block', transform: 'translateX(-100%)', opacity: 0 },
     to: { transform: 'translateX(0)', opacity: 1 },
+  };
+
+  const firstSlideInFromLeft = useSpring({
+    ...styles,
+  });
+
+  const secondSlideInFromLeft = useSpring({
+    ...styles,
+    delay: 50,
+  });
+
+  const thirdSlideInFromLeft = useSpring({
+    ...styles,
+    delay: 150,
   });
 
   const slideInFromBottom = useSpring({
@@ -143,11 +161,17 @@ const Hero = () => {
   return (
     <StyledHero>
       <Navbar />
-      <StyledHeader style={slideInFromLeft}>
-        Hi, <br />
-        I'm <BoldText>Mateusz Lesiuk</BoldText>
-        <br />
-        <SmallText>a Front-End Developer</SmallText>
+      <StyledHeader>
+        <AnimatedSpan style={firstSlideInFromLeft}>
+          Hi, <br />
+        </AnimatedSpan>
+        <AnimatedSpan style={secondSlideInFromLeft}>
+          I'm <BoldText>Mateusz Lesiuk</BoldText>
+          <br />
+        </AnimatedSpan>
+        <AnimatedSpan style={thirdSlideInFromLeft}>
+          <SmallText>a Front-End Developer</SmallText>
+        </AnimatedSpan>
       </StyledHeader>
       <StyledArrowWrapper style={slideInFromBottom}>
         <Link to="/#about">
