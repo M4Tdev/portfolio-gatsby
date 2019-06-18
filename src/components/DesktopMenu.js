@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSpring, animated, config } from 'react-spring';
 
 const MenuWrapper = styled.ul`
   list-style-type: none;
@@ -29,7 +30,7 @@ const MenuWrapper = styled.ul`
   }
 `;
 
-const ListItem = styled.li`
+const ListItem = styled(animated.li)`
   display: inline-block;
   margin-right: 2.5rem;
   position: relative;
@@ -89,18 +90,41 @@ const ListItem = styled.li`
   }
 `;
 
-const DesktopMenu = () => (
-  <MenuWrapper>
-    <ListItem>
-      <a href="/#about">About me</a>
-    </ListItem>
-    <ListItem>
-      <a href="/#portfolio">Portfolio</a>
-    </ListItem>
-    <ListItem>
-      <a href="/#contact">Contact</a>
-    </ListItem>
-  </MenuWrapper>
-);
+const DesktopMenu = () => {
+  const states = {
+    from: { transform: 'translateX(100%)', opacity: 0 },
+    to: { transform: 'translateX(0)', opacity: 1 },
+  };
+  const firstLi = useSpring({
+    config: config.wobbly,
+    ...states,
+  });
+
+  const secondLi = useSpring({
+    config: config.wobbly,
+    ...states,
+    delay: 100,
+  });
+
+  const thirdLi = useSpring({
+    config: config.wobbly,
+    ...states,
+    delay: 150,
+  });
+
+  return (
+    <MenuWrapper>
+      <ListItem style={firstLi}>
+        <a href="/#about">About me</a>
+      </ListItem>
+      <ListItem style={secondLi}>
+        <a href="/#portfolio">Portfolio</a>
+      </ListItem>
+      <ListItem style={thirdLi}>
+        <a href="/#contact">Contact</a>
+      </ListItem>
+    </MenuWrapper>
+  );
+};
 
 export default DesktopMenu;
