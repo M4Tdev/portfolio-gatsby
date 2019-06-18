@@ -123,7 +123,7 @@ const Navbar = () => {
   });
 
   const menu = useTransition(isMenuOpen, null, {
-    config: config.stiff,
+    config: { duration: 200 },
     from: { transform: 'translateX(-100%)' },
     enter: { transform: 'translateX(0)' },
     leave: { transform: 'translateX(-100%)' },

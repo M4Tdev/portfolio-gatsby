@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { Times } from 'styled-icons/fa-solid';
-import { animated } from 'react-spring';
+import { useSpring, animated, config } from 'react-spring';
 
 const StyledMobileMenu = styled(animated.div)`
   position: fixed;
@@ -44,7 +44,7 @@ const MenuInnerWrapper = styled.ul`
   list-style-type: none;
 `;
 
-const MenuItem = styled.li`
+const MenuItem = styled(animated.li)`
   font-size: 2.4rem;
   font-weight: var(--medium);
   margin-bottom: 5rem;
@@ -55,29 +55,51 @@ const MenuItem = styled.li`
   }
 `;
 
-const MobileMenu = props => (
-  <StyledMobileMenu style={props.animate}>
-    <CloseMenuButton onClick={() => props.toggleMenu(false)}>
-      <CloseMenuIcon />
-    </CloseMenuButton>
-    <MenuInnerWrapper>
-      <MenuItem>
-        <Link to="/#about" onClick={() => props.toggleMenu(false)}>
-          About me
-        </Link>
-      </MenuItem>
-      <MenuItem>
-        <Link to="/#portfolio" onClick={() => props.toggleMenu(false)}>
-          Portfolio
-        </Link>
-      </MenuItem>
-      <MenuItem>
-        <Link to="/#contact" onClick={() => props.toggleMenu(false)}>
-          Contact
-        </Link>
-      </MenuItem>
-    </MenuInnerWrapper>
-  </StyledMobileMenu>
-);
+const MobileMenu = props => {
+  const styles = {
+    config: config.stiff,
+    from: { transform: 'translateX(-100%)' },
+    to: { transform: 'translateX(0)' },
+  };
+
+  const firstMenuItem = useSpring({
+    ...styles,
+  });
+
+  const secondMenuItem = useSpring({
+    ...styles,
+    delay: 50,
+  });
+
+  const thirdMenuItem = useSpring({
+    ...styles,
+    delay: 100,
+  });
+
+  return (
+    <StyledMobileMenu style={props.animate}>
+      <CloseMenuButton onClick={() => props.toggleMenu(false)}>
+        <CloseMenuIcon />
+      </CloseMenuButton>
+      <MenuInnerWrapper>
+        <MenuItem style={firstMenuItem}>
+          <Link to="/#about" onClick={() => props.toggleMenu(false)}>
+            About me
+          </Link>
+        </MenuItem>
+        <MenuItem style={secondMenuItem}>
+          <Link to="/#portfolio" onClick={() => props.toggleMenu(false)}>
+            Portfolio
+          </Link>
+        </MenuItem>
+        <MenuItem style={thirdMenuItem}>
+          <Link to="/#contact" onClick={() => props.toggleMenu(false)}>
+            Contact
+          </Link>
+        </MenuItem>
+      </MenuInnerWrapper>
+    </StyledMobileMenu>
+  );
+};
 
 export default MobileMenu;
