@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { ChevronUp } from 'styled-icons/fa-solid';
+import { useSpring, animated } from 'react-spring';
 
-const GoToTop = styled.button`
+const GoToTop = styled(animated.button)`
   position: fixed;
   bottom: 3rem;
   right: 2rem;
@@ -13,29 +14,12 @@ const GoToTop = styled.button`
   border-radius: 50%;
   z-index: 2;
   box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.3);
-  display: ${props => (props.show ? 'block' : 'none')};
   opacity: 1;
   cursor: pointer;
+  transition: transform 0.2s ease;
 
-  &::before {
-    content: 'Go to top';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    min-width: 100%;
-    width: 200%;
-    margin: 0 auto;
-    font-size: 1.4rem;
-    font-weight: var(--semiBold);
-    transition: opacity 0.1s ease, transform 0.1s ease;
-    z-index: -1;
-  }
-
-  &:hover::before {
-    transform: translateX(-50%) translateY(-200%);
-    opacity: 1;
+  &:hover {
+    transform: translateY(-0.5rem);
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
@@ -105,8 +89,13 @@ const GoToTopButton = () => {
     return () => window.removeEventListener('scroll', displayButton);
   }, []);
 
+  const appear = useSpring({
+    display: showToTop ? 'block' : 'none',
+    opacity: showToTop ? 1 : 0,
+  });
+
   return (
-    <GoToTop show={showToTop} onClick={scrollToTop}>
+    <GoToTop style={appear} onClick={scrollToTop}>
       <StyledChevron />
     </GoToTop>
   );
