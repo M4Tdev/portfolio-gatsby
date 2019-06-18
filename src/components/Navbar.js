@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Bars } from 'styled-icons/fa-solid';
-import { useSpring, animated, config } from 'react-spring';
+import { useSpring, useTransition, animated, config } from 'react-spring';
 
 import MobileMenu from './MobileMenu';
 import DesktopMenu from './DesktopMenu';
@@ -121,6 +121,13 @@ const Navbar = () => {
     to: { transform: 'translateX(0)' },
   });
 
+  const menu = useTransition(isMenuOpen, null, {
+    config: config.stiff,
+    from: { transform: 'translateX(-100%)' },
+    enter: { transform: 'translateX(0)' },
+    leave: { transform: 'translateX(-100%)' },
+  });
+
   const renderMenu = () => {
     if (isMobile === null) {
       return null;
@@ -132,7 +139,10 @@ const Navbar = () => {
           <StyledMenuToggle onClick={() => toggleMenu(!isMenuOpen)} style={slideInFromRight}>
             <StyledBurger />
           </StyledMenuToggle>
-          <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          {menu.map(
+            ({ item, key, props }) =>
+              item && <MobileMenu key={key} animate={props} isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          )}
         </>
       );
     }

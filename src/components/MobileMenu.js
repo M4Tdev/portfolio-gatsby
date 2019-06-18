@@ -2,20 +2,17 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { Times } from 'styled-icons/fa-solid';
+import { animated } from 'react-spring';
 
-const StyledMobileMenu = styled.div`
+const StyledMobileMenu = styled(animated.div)`
   position: fixed;
   width: 100%;
   height: 100%;
   background-color: var(--customBlack);
   top: 0;
-  left: -100%;
+  left: 0;
+  transform: translateX(-100%);
   z-index: 20;
-  transition: transform 0.1s ease;
-
-  &.open {
-    transform: translateX(100%);
-  }
 `;
 
 const CloseMenuButton = styled.button`
@@ -59,7 +56,7 @@ const MenuItem = styled.li`
 `;
 
 const MobileMenu = props => (
-  <StyledMobileMenu className={props.isMenuOpen ? 'open' : ''} isMenuOpen={props.isMenuOpen}>
+  <StyledMobileMenu style={props.animate}>
     <CloseMenuButton onClick={() => props.toggleMenu(false)}>
       <CloseMenuIcon />
     </CloseMenuButton>
