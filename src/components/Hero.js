@@ -144,12 +144,12 @@ const Hero = () => {
 
   const secondSlideInFromLeft = useSpring({
     ...styles,
-    delay: 50,
+    delay: 100,
   });
 
   const thirdSlideInFromLeft = useSpring({
     ...styles,
-    delay: 150,
+    delay: 200,
   });
 
   const slideInFromBottom = useSpring({

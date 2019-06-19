@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Bars } from 'styled-icons/fa-solid';
-import { useSpring, useTransition, animated, config } from 'react-spring';
+import { useSpring, useTransition, animated } from 'react-spring';
 import { Link } from 'gatsby';
 
 import MobileMenu from './MobileMenu';
