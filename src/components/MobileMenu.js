@@ -55,7 +55,7 @@ const MenuItem = styled(animated.li)`
   }
 `;
 
-const Copyright = styled.div`
+const Copyright = styled(animated.div)`
   position: absolute;
   width: 100%;
   bottom: 2rem;
@@ -96,6 +96,13 @@ const MobileMenu = props => {
     delay: 100,
   });
 
+  const copyrightSpring = useSpring({
+    config: config.wobbly,
+    from: { transform: 'translateY(300%)', opacity: 0 },
+    to: { transform: 'translateY(0)', opacity: 1 },
+    delay: 1000,
+  });
+
   return (
     <StyledMobileMenu style={props.animate}>
       <CloseMenuButton onClick={() => props.toggleMenu(false)}>
@@ -118,7 +125,7 @@ const MobileMenu = props => {
           </Link>
         </MenuItem>
       </MenuInnerWrapper>
-      <Copyright>Copyright © 2019, Mateusz Lesiuk</Copyright>
+      <Copyright style={copyrightSpring}>Copyright © 2019, Mateusz Lesiuk</Copyright>
     </StyledMobileMenu>
   );
 };
