@@ -221,10 +221,10 @@ const PortfolioProject = props => (
         <ProjectDescription dangerouslySetInnerHTML={{ __html: props.project.node.html }} />
         <ProjectStack>{props.project.node.frontmatter.stack}</ProjectStack>
         <ProjectLinkWrapper>
-          <ProjectLink href={props.project.node.frontmatter.liveLink} target="_blank">
+          <ProjectLink href={props.project.node.frontmatter.liveLink} target="_blank" rel="noopener noreferrer">
             Live
           </ProjectLink>
-          <ProjectLink href={props.project.node.frontmatter.sourceLink} target="_blank">
+          <ProjectLink href={props.project.node.frontmatter.sourceLink} target="_blank" rel="noopener noreferrer">
             Source
           </ProjectLink>
         </ProjectLinkWrapper>
