@@ -55,6 +55,26 @@ const MenuItem = styled(animated.li)`
   }
 `;
 
+const Copyright = styled.div`
+  position: absolute;
+  width: 100%;
+  bottom: 2rem;
+  left: 0;
+  text-align: center;
+  font-size: 1.2rem;
+  opacity: 0.5;
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    font-size: 1.4rem;
+    bottom: 2.5rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    font-size: 1.6rem;
+    bottom: 3.5rem;
+  }
+`;
+
 const MobileMenu = props => {
   const styles = {
     config: config.stiff,
@@ -98,6 +118,7 @@ const MobileMenu = props => {
           </Link>
         </MenuItem>
       </MenuInnerWrapper>
+      <Copyright>Copyright © 2019, Mateusz Lesiuk</Copyright>
     </StyledMobileMenu>
   );
 };
