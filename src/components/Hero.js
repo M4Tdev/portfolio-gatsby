@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ChevronDown } from 'styled-icons/fa-solid';
-import { Link } from 'gatsby';
+import { Link } from 'react-scroll';
 import { useSpring, animated, config } from 'react-spring';
 
 import Navbar from './Navbar';
@@ -171,7 +171,7 @@ const Hero = () => {
   });
 
   return (
-    <StyledHero>
+    <StyledHero id="hero">
       <Navbar />
       <StyledHeader>
         <AnimatedSpan style={firstSlideInFromLeft}>
@@ -186,7 +186,7 @@ const Hero = () => {
         </AnimatedSpan>
       </StyledHeader>
       <StyledArrowWrapper style={slideInFromBottom}>
-        <Link to="/#about">
+        <Link to="about" spy smooth>
           <StyledArrow />
         </Link>
       </StyledArrowWrapper>

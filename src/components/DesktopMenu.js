@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSpring, animated, config } from 'react-spring';
+import { Link } from 'react-scroll';
 
 const MenuWrapper = styled.ul`
   list-style-type: none;
@@ -47,6 +48,7 @@ const ListItem = styled(animated.li)`
     border-radius: 0.5rem;
     transition: color 0.3s ease;
     z-index: 1;
+    cursor: pointer;
   }
 
   &:hover {
@@ -109,17 +111,22 @@ const DesktopMenu = () => {
     ...states,
     delay: 150,
   });
-
   return (
     <MenuWrapper>
       <ListItem style={firstLi}>
-        <a href="/#about">About me</a>
+        <Link to="about" spy smooth>
+          About me
+        </Link>
       </ListItem>
       <ListItem style={secondLi}>
-        <a href="/#portfolio">Portfolio</a>
+        <Link to="portfolio" spy smooth>
+          Portfolio
+        </Link>
       </ListItem>
       <ListItem style={thirdLi}>
-        <a href="/#contact">Contact</a>
+        <Link to="contact" spy smooth>
+          Contact
+        </Link>
       </ListItem>
     </MenuWrapper>
   );
