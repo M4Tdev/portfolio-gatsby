@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
 import { Times } from 'styled-icons/fa-solid';
 import { useSpring, animated, config } from 'react-spring';
@@ -110,17 +110,17 @@ const MobileMenu = props => {
       </CloseMenuButton>
       <MenuInnerWrapper>
         <MenuItem style={firstMenuItem}>
-          <Link to="/#about" onClick={() => props.toggleMenu(false)}>
+          <Link to="about" spy smooth onClick={() => props.toggleMenu(false)}>
             About me
           </Link>
         </MenuItem>
         <MenuItem style={secondMenuItem}>
-          <Link to="/#portfolio" onClick={() => props.toggleMenu(false)}>
+          <Link to="portfolio" spy smooth onClick={() => props.toggleMenu(false)}>
             Portfolio
           </Link>
         </MenuItem>
         <MenuItem style={thirdMenuItem}>
-          <Link to="/#contact" onClick={() => props.toggleMenu(false)}>
+          <Link to="contact" spy smooth onClick={() => props.toggleMenu(false)}>
             Contact
           </Link>
         </MenuItem>

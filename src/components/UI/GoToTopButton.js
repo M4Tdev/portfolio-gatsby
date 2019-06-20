@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { ChevronUp } from 'styled-icons/fa-solid';
 import { useSpring, animated } from 'react-spring';
+import { animateScroll as scroll } from 'react-scroll';
 
 const GoToTop = styled(animated.button)`
   position: fixed;
@@ -79,7 +80,7 @@ const GoToTopButton = () => {
   };
 
   const scrollToTop = () => {
-    window.scrollBy({ top: -window.pageYOffset, left: 0, behavior: 'smooth' });
+    scroll.scrollToTop();
   };
 
   useEffect(() => {

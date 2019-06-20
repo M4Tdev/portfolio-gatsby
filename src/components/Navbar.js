@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Bars } from 'styled-icons/fa-solid';
 import { useSpring, useTransition, animated } from 'react-spring';
-import { Link } from 'gatsby';
+import { Link } from 'react-scroll';
 
 import MobileMenu from './MobileMenu';
 import DesktopMenu from './DesktopMenu';
@@ -47,6 +47,7 @@ const InnerWrapper = styled.div`
 const AnimatedLogo = styled(animated(Link))`
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 `;
 
 const StyledLogo = styled.h1`
@@ -153,7 +154,7 @@ const Navbar = () => {
   return (
     <StyledNavbar>
       <InnerWrapper>
-        <AnimatedLogo to="/" style={slideInFromTop}>
+        <AnimatedLogo to="hero" spy smooth style={slideInFromTop}>
           <StyledLogo>Mateusz Lesiuk</StyledLogo>
         </AnimatedLogo>
         {renderMenu()}
