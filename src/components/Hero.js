@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ChevronDown } from 'styled-icons/fa-solid';
 import { Link } from 'gatsby';
@@ -8,7 +8,8 @@ import Navbar from './Navbar';
 
 const StyledHero = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
   background: linear-gradient(to bottom right, var(--primaryLight), var(--primaryDark));
   display: grid;
   grid-template-columns: 1fr;
@@ -132,6 +133,17 @@ const StyledArrow = styled(ChevronDown)`
 `;
 
 const Hero = () => {
+  const heroSectionHeight = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  };
+
+  useEffect(() => {
+    heroSectionHeight();
+    window.addEventListener('resize', heroSectionHeight);
+    return () => window.removeEventListener('resize', heroSectionHeight);
+  }, []);
+
   const styles = {
     config: config.wobbly,
     from: { display: 'block', transform: 'translateX(-100%)', opacity: 0 },
