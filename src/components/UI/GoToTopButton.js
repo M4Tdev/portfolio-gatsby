@@ -74,9 +74,7 @@ const GoToTopButton = () => {
   const [showToTop, setShowToTop] = useState(false);
 
   const displayButton = () => {
-    if (window.pageYOffset <= 100) {
-      setShowToTop(window.pageYOffset > 0);
-    }
+    setShowToTop(window.pageYOffset > 800);
   };
 
   const scrollToTop = () => {
