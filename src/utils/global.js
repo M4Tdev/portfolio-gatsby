@@ -12,7 +12,6 @@ export default createGlobalStyle`
 	html {
 		font-size: 62.5%;
 		color: white;
-		scroll-behavior: smooth;
 		overflow-x: hidden;
 	}
 
