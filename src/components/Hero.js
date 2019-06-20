@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ChevronDown } from 'styled-icons/fa-solid';
 import { Link } from 'gatsby';
+import { useSpring, animated, config } from 'react-spring';
 
 import Navbar from './Navbar';
 
@@ -16,7 +17,7 @@ const StyledHero = styled.div`
   position: relative;
 `;
 
-const StyledHeader = styled.h1`
+const StyledHeader = styled(animated.h1)`
   align-self: center;
   margin: 0 auto;
   font-weight: var(--regular);
@@ -45,6 +46,10 @@ const StyledHeader = styled.h1`
   @media ${({ theme }) => theme.mediaQueries.largest} {
     font-size: 4.8rem;
   }
+`;
+
+const AnimatedSpan = styled(animated.span)`
+  display: block;
 `;
 
 const BoldText = styled.span`
@@ -80,7 +85,7 @@ const SmallText = styled.span`
   }
 `;
 
-const StyledArrowWrapper = styled.div`
+const StyledArrowWrapper = styled(animated.div)`
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -126,21 +131,55 @@ const StyledArrow = styled(ChevronDown)`
   }
 `;
 
-const Hero = props => (
-  <StyledHero>
-    <Navbar />
-    <StyledHeader>
-      Hi, <br />
-      I'm <BoldText>Mateusz Lesiuk</BoldText>
-      <br />
-      <SmallText>a Front-End Developer</SmallText>
-    </StyledHeader>
-    <StyledArrowWrapper>
-      <Link to="/#about">
-        <StyledArrow />
-      </Link>
-    </StyledArrowWrapper>
-  </StyledHero>
-);
+const Hero = () => {
+  const styles = {
+    config: config.wobbly,
+    from: { display: 'block', transform: 'translateX(-100%)', opacity: 0 },
+    to: { transform: 'translateX(0)', opacity: 1 },
+  };
+
+  const firstSlideInFromLeft = useSpring({
+    ...styles,
+  });
+
+  const secondSlideInFromLeft = useSpring({
+    ...styles,
+    delay: 100,
+  });
+
+  const thirdSlideInFromLeft = useSpring({
+    ...styles,
+    delay: 200,
+  });
+
+  const slideInFromBottom = useSpring({
+    from: { opacity: 0, transform: 'translateX(-50%) translateY(130%)' },
+    to: { opacity: 1, transform: 'translateX(-50%) translateY(0)' },
+    delay: 500,
+  });
+
+  return (
+    <StyledHero>
+      <Navbar />
+      <StyledHeader>
+        <AnimatedSpan style={firstSlideInFromLeft}>
+          Hi, <br />
+        </AnimatedSpan>
+        <AnimatedSpan style={secondSlideInFromLeft}>
+          I'm <BoldText>Mateusz Lesiuk</BoldText>
+          <br />
+        </AnimatedSpan>
+        <AnimatedSpan style={thirdSlideInFromLeft}>
+          <SmallText>a Front-End Developer</SmallText>
+        </AnimatedSpan>
+      </StyledHeader>
+      <StyledArrowWrapper style={slideInFromBottom}>
+        <Link to="/#about">
+          <StyledArrow />
+        </Link>
+      </StyledArrowWrapper>
+    </StyledHero>
+  );
+};
 
 export default Hero;

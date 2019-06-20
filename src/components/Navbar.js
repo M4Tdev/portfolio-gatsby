@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Bars } from 'styled-icons/fa-solid';
+import { useSpring, useTransition, animated } from 'react-spring';
+import { Link } from 'gatsby';
 
 import MobileMenu from './MobileMenu';
 import DesktopMenu from './DesktopMenu';
@@ -19,11 +21,6 @@ const InnerWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 3rem auto 0;
-
-  & a {
-    color: inherit;
-    text-decoration: none;
-  }
 
   @media ${({ theme }) => theme.mediaQueries.small} {
     width: 90%;
@@ -45,6 +42,11 @@ const InnerWrapper = styled.div`
     margin-top: 5rem;
     width: 70%;
   }
+`;
+
+const AnimatedLogo = styled(animated(Link))`
+  color: inherit;
+  text-decoration: none;
 `;
 
 const StyledLogo = styled.h1`
@@ -74,7 +76,7 @@ const StyledLogo = styled.h1`
   }
 `;
 
-const StyledMenuToggle = styled.button`
+const StyledMenuToggle = styled(animated.button)`
   background-color: white;
   height: 3rem;
   width: 3rem;
@@ -91,7 +93,7 @@ const StyledBurger = styled(Bars)`
   fill: currentColor;
 `;
 
-const Navbar = props => {
+const Navbar = () => {
   const [isMenuOpen, toggleMenu] = useState(false);
   const [isMobile, setMobile] = useState(null);
 
@@ -108,6 +110,25 @@ const Navbar = props => {
     return () => window.removeEventListener('resize', changeMobile);
   }, []);
 
+  const slideInFromTop = useSpring({
+    // config: config.wobbly,
+    from: { transform: 'translateY(-100%)', opacity: 0 },
+    to: { transform: 'translateY(0)', opacity: 1 },
+  });
+
+  const slideInFromRight = useSpring({
+    // config: config.wobbly,
+    from: { transform: 'translateX(100%)' },
+    to: { transform: 'translateX(0)' },
+  });
+
+  const menu = useTransition(isMenuOpen, null, {
+    config: { duration: 200 },
+    from: { transform: 'translateX(-100%)' },
+    enter: { transform: 'translateX(0)' },
+    leave: { transform: 'translateX(-100%)' },
+  });
+
   const renderMenu = () => {
     if (isMobile === null) {
       return null;
@@ -116,10 +137,13 @@ const Navbar = props => {
     if (isMobile) {
       return (
         <>
-          <StyledMenuToggle onClick={() => toggleMenu(!isMenuOpen)}>
+          <StyledMenuToggle onClick={() => toggleMenu(!isMenuOpen)} style={slideInFromRight}>
             <StyledBurger />
           </StyledMenuToggle>
-          <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          {menu.map(
+            ({ item, key, props }) =>
+              item && <MobileMenu key={key} animate={props} isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          )}
         </>
       );
     }
@@ -129,9 +153,9 @@ const Navbar = props => {
   return (
     <StyledNavbar>
       <InnerWrapper>
-        <a href="https://mateuszlesiuk.dev">
+        <AnimatedLogo to="/" style={slideInFromTop}>
           <StyledLogo>Mateusz Lesiuk</StyledLogo>
-        </a>
+        </AnimatedLogo>
         {renderMenu()}
       </InnerWrapper>
     </StyledNavbar>
