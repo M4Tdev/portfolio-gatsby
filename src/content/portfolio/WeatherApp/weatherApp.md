@@ -7,4 +7,4 @@ img: "./weatherApp.png"
 order: 3
 ---
 
-This is my weather app...
+This web app gets your current location, communicates with weather API and displays weather for that location, also if you want to know weather in any other city/country you can add it to your saved locations and get weather for them. When you click on current or saved location you will get forecast for 5 days and than you can get even more precise weather info when you click on specific time of the day.

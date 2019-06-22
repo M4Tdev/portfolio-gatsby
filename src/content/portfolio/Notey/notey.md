@@ -7,4 +7,4 @@ img: "./notey.png"
 order: 2
 ---
 
-This is Notey app where you can save your note for later...
+It is a note taking app, where you login with your Google account. You can add, read, edit and delete your notes. They are stored in FireStore database so you have access to all your notes everywhere with your Google account.
