@@ -134,6 +134,7 @@ const CurrentStack = styled.div`
     font-weight: var(--medium);
     text-align: center;
     line-height: 2rem;
+    color: var(--primaryDark);
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
