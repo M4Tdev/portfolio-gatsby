@@ -46,6 +46,8 @@ const ContactText = styled.p`
   font-size: 1.5rem;
   font-weight: var(--regular);
 
+  ${({ theme }) => theme.mixins.selection(undefined, 'white')}
+
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.8rem;
   }
@@ -80,6 +82,8 @@ const ContactEmail = styled.p`
     color: inherit;
     text-decoration: none;
     cursor: pointer;
+
+    ${({ theme }) => theme.mixins.selection(undefined, 'white')}
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
@@ -184,6 +188,8 @@ const FooterLogo = styled.h2`
   margin-bottom: 1rem;
   text-align: center;
 
+  ${({ theme }) => theme.mixins.selection(undefined, 'white')}
+
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 2.6rem;
   }
@@ -205,6 +211,8 @@ const FooterCopyright = styled.span`
   display: block;
   font-size: 0.9rem;
   margin-top: 0.5rem;
+
+  ${({ theme }) => theme.mixins.selection(undefined, 'white')}
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.2rem;

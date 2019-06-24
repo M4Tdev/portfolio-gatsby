@@ -8,6 +8,8 @@ export default createGlobalStyle`
 		font-family: 'Montserrat', sans-serif;
 		outline: none;
 		backface-visibility: hidden;
+
+		${({ theme }) => theme.mixins.selection()}
 	}
 
 	html {

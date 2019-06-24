@@ -70,12 +70,16 @@ const StyledContent = styled.div`
 
   & p {
     margin: 1.6rem 0;
+
+    ${({ theme }) => theme.mixins.selection(undefined, 'white')}
   }
 
   & a {
     ${({ theme }) => theme.mixins.link('rgba(52, 73, 94, 0.4)')}
     font-weight: var(--medium);
     line-height: 2.5rem;
+
+    ${({ theme }) => theme.mixins.selection(undefined, 'var(--primaryLight)')}
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
@@ -126,6 +130,8 @@ const CurrentStack = styled.div`
   & h2 {
     font-weight: var(--semiBold);
     font-size: 1.5rem;
+
+    ${({ theme }) => theme.mixins.selection(undefined, 'white')}
   }
 
   & p {
@@ -135,6 +141,8 @@ const CurrentStack = styled.div`
     text-align: center;
     line-height: 2rem;
     color: var(--primaryDark);
+
+    ${({ theme }) => theme.mixins.selection(undefined, 'white')}
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {

@@ -25,6 +25,12 @@ const theme = {
         border-bottom: 0.1rem solid rgba(52, 73, 94, 0);
         background-color: rgba(52, 73, 94, 0.1);
       } `,
+    selection: (backgroundColor = 'grey', color = 'inherit') => `
+        &::selection {
+          background-color: ${backgroundColor};
+          color: ${color}
+        }
+      `,
   },
 };
 
