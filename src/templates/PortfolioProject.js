@@ -74,29 +74,29 @@ const ProjectContent = styled.div`
 
 const ProjectDescription = styled.div`
   font-size: 1.4rem;
-  font-weight: var(--medium);
-  margin-top: 1rem;
+  font-weight: var(--regular);
+  margin-top: 2rem;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-top: 2rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.small} {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
     margin-top: 0;
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.largest} {
@@ -106,7 +106,7 @@ const ProjectDescription = styled.div`
 
 const ProjectStack = styled.div`
   font-size: 1.2rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   color: rgba(255, 255, 255, 0.7);
   font-weight: var(--regular);
 
@@ -140,7 +140,7 @@ const ProjectLinkWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  margin: 1rem auto 0;
+  margin: 2rem auto 0;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     margin-top: 2rem;
