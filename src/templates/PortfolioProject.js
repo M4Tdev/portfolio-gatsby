@@ -48,7 +48,7 @@ const ProjectFlexDiv = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media ${({ theme }) => theme.mediaQueries.medium} {
+  @media ${({ theme }) => theme.mediaQueries.large} {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
@@ -59,7 +59,7 @@ const ProjectImage = styled(Img)`
   box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.3);
   width: 100%;
 
-  @media ${({ theme }) => theme.mediaQueries.medium} {
+  @media ${({ theme }) => theme.mediaQueries.large} {
     flex-basis: 52%;
   }
 `;
@@ -68,6 +68,11 @@ const ProjectContent = styled.div`
   width: 100%;
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.large} {
     flex-basis: 44%;
   }
 `;
@@ -79,7 +84,6 @@ const ProjectDescription = styled.div`
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.5rem;
-    margin-top: 2rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.small} {
@@ -92,11 +96,12 @@ const ProjectDescription = styled.div`
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
     font-size: 2.1rem;
-    margin-top: 0;
+    margin-top: 2.5rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
     font-size: 2.2rem;
+    margin-top: 0;
   }
 
   @media ${({ theme }) => theme.mediaQueries.largest} {
