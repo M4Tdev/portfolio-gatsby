@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 
 const Project = styled.div`
-  width: 95%;
+  width: 100%;
   text-align: center;
   margin: 1rem auto 3rem;
   box-sizing: border-box;
@@ -50,8 +50,8 @@ const ProjectFlexDiv = styled.div`
 
   @media ${({ theme }) => theme.mediaQueries.large} {
     flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+    align-items: flex-start;
+    /* justify-content: space-evenly; */
   }
 `;
 
@@ -60,7 +60,8 @@ const ProjectImage = styled(Img)`
   width: 100%;
 
   @media ${({ theme }) => theme.mediaQueries.large} {
-    flex-basis: 52%;
+    flex: 1 0 50%;
+    margin: 0 3rem;
   }
 `;
 
@@ -73,7 +74,9 @@ const ProjectContent = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
-    flex-basis: 44%;
+    flex-basis: 1 1 50%;
+    margin: 0 3rem;
+    text-align: left;
   }
 `;
 
@@ -95,17 +98,17 @@ const ProjectDescription = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    font-size: 2.1rem;
     margin-top: 2.5rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-top: 0;
   }
 
   @media ${({ theme }) => theme.mediaQueries.largest} {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
   }
 `;
 
@@ -120,35 +123,35 @@ const ProjectStack = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.small} {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    font-size: 2rem;
     margin-top: 3rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
-    font-size: 2.5rem;
+    font-size: 1.7rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.largest} {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 `;
 
 const ProjectLinkWrapper = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-evenly;
   margin: 2rem auto 0;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     margin-top: 2rem;
+    width: 75%;
   }
 
   @media ${({ theme }) => theme.mediaQueries.small} {
