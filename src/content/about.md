@@ -5,7 +5,7 @@ currentStack: HTML - CSS - JavaScript - SASS - ReactJS - Redux - MongoDB - Style
 I'm Mateusz Lesiuk a Front End Developer from Poland.
 
 I have always been interested in creating websites and web applications but I have not done anything serious about it.
-Finally in November 2018 I have decided that I want to be a Web Developer and take it seriously.
+Finally in November 2018 I have decided that I want to be a Web Developer and I took it seriously.
 So I did, I have started to wake up early and learn how to code,
 I started doing courses and over time I was using more and more documentation to learn from.
 
