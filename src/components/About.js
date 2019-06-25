@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
+import rehypeReact from 'rehype-react';
+import { Link } from 'react-scroll';
 
 import Shape from '../assets/Vector1.svg';
 import SectionName from './UI/SectionName';
@@ -67,9 +69,11 @@ const Wrapper = styled.div`
 const StyledContent = styled.div`
   font-size: 1.5rem;
   font-weight: var(--regular);
+  line-height: 2.6rem;
 
   & p {
     margin: 1.6rem 0;
+    text-align: center;
 
     ${({ theme }) => theme.mixins.selection(undefined, 'white')}
   }
@@ -78,6 +82,7 @@ const StyledContent = styled.div`
     ${({ theme }) => theme.mixins.link('rgba(52, 73, 94, 0.4)')}
     font-weight: var(--medium);
     line-height: 2.5rem;
+    cursor: pointer;
 
     ${({ theme }) => theme.mixins.selection(undefined, 'var(--primaryLight)')}
   }
@@ -231,11 +236,17 @@ const About = () => {
           frontmatter {
             currentStack
           }
-          html
+          htmlAst
         }
       }
     }
   `);
+
+  /* eslint-disable-next-line */
+  const renderAst = new rehypeReact({
+    createElement: React.createElement,
+    components: { 'scroll-link': Link },
+  }).Compiler;
 
   return (
     <StyledAbout id="about">
@@ -243,11 +254,7 @@ const About = () => {
         <StyledShape />
         <SectionName colorstyle="normal">About me</SectionName>
         <Wrapper>
-          <StyledContent
-            dangerouslySetInnerHTML={{
-              __html: data.file.childMarkdownRemark.html,
-            }}
-          />
+          <StyledContent>{renderAst(data.file.childMarkdownRemark.htmlAst)}</StyledContent>
           <CurrentStack>
             <h2>My current stack of technologies:</h2>
             <p>{data.file.childMarkdownRemark.frontmatter.currentStack}</p>
