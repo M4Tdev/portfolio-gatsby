@@ -69,7 +69,7 @@ const Wrapper = styled.div`
 const StyledContent = styled.div`
   font-size: 1.5rem;
   font-weight: var(--regular);
-  line-height: 2.6rem;
+  line-height: 2.1rem;
 
   & p {
     margin: 1.6rem 0;
@@ -79,16 +79,17 @@ const StyledContent = styled.div`
   }
 
   & a {
-    ${({ theme }) => theme.mixins.link('rgba(52, 73, 94, 0.4)')}
     font-weight: var(--medium);
     line-height: 2.5rem;
     cursor: pointer;
 
+    ${({ theme }) => theme.mixins.link('rgba(52, 73, 94, 0.4)')}
     ${({ theme }) => theme.mixins.selection(undefined, 'var(--primaryLight)')}
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.6rem;
+    line-height: 2.3rem;
 
     & a {
       line-height: 2.6rem;
@@ -97,6 +98,7 @@ const StyledContent = styled.div`
 
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
     font-size: 2.2rem;
+    line-height: 3rem;
 
     & a {
       line-height: 3.2rem;
@@ -104,7 +106,8 @@ const StyledContent = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    font-size: 3rem;
+    font-size: 2.6rem;
+    line-height: 3.4rem;
 
     & a {
       line-height: 4.2rem;
@@ -112,8 +115,6 @@ const StyledContent = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
-    font-size: 3.5rem;
-
     & a {
       line-height: 4.5rem;
     }
@@ -121,6 +122,7 @@ const StyledContent = styled.div`
 
   @media ${({ theme }) => theme.mediaQueries.largest} {
     font-size: 2rem;
+    line-height: 2.8rem;
 
     & a {
       line-height: 3rem;
