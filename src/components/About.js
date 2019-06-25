@@ -130,6 +130,13 @@ const StyledContent = styled.div`
   }
 `;
 
+const StyledLink = styled(Link).attrs({
+  spy: true,
+  smooth: true,
+})`
+  cursor: pointer;
+`;
+
 const CurrentStack = styled.div`
   margin-top: 3rem;
   text-align: center;
@@ -247,7 +254,7 @@ const About = () => {
   /* eslint-disable-next-line */
   const renderAst = new rehypeReact({
     createElement: React.createElement,
-    components: { 'scroll-link': Link },
+    components: { 'scroll-link': StyledLink },
   }).Compiler;
 
   return (
