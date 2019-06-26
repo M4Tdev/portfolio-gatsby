@@ -22,6 +22,7 @@ const SEO = () => {
       <meta charset="UTF-8" />
       <meta name="author" content={data.site.siteMetadata.author} />
       <meta name="description" content={data.site.siteMetadata.description} />
+      <link rel="shortcut icon" href="favicon.ico" />
       <meta property="og:title" content={data.site.siteMetadata.title} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={data.site.siteMetadata.title} />
