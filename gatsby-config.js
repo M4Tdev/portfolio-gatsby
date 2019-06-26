@@ -61,5 +61,18 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Mateusz Lesiuk | Portfolio',
+        short_name: 'Mateusz Lesiuk | Portfolio',
+        start_url: '/',
+        background_color: '#2D74E5',
+        theme_color: '#2D74E5',
+        display: 'standalone',
+        icon: `src/assets/icon.png`,
+      },
+    },
+    'gatsby-plugin-offline',
   ],
 };
