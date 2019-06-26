@@ -1,5 +1,6 @@
 ---
 currentStack: HTML - CSS - JavaScript - SASS - ReactJS - Redux - MongoDB - Styled Components - CSS Modules - GraphQL - Gatsby - GIT - NPM - Webpack - Babel - Firebase
+resume: 'resume.pdf'
 ---
 
 I'm Mateusz Lesiuk a Front End Developer from Poland.

@@ -137,6 +137,60 @@ const StyledLink = styled(Link).attrs({
   cursor: pointer;
 `;
 
+const ButtonWrapper = styled.div`
+  text-align: center;
+  margin: 2rem 0 0;
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    margin: 2.5rem 0 0;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    margin: 3rem 0 0;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    margin: 4rem 0 0;
+  }
+`;
+
+const ResumeButton = styled.a`
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background-color: var(--primaryDark);
+  border: none;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 0.2rem;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-0.3rem);
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallest} {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    font-size: 1.1rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.smallMedium} {
+    padding: 1.3rem 2rem;
+    font-size: 1.5rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    padding: 1.3rem 2.3rem;
+    font-size: 2rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.large} {
+    padding: 1.1rem 2rem;
+    font-size: 1.4rem;
+  }
+`;
+
 const CurrentStack = styled.div`
   margin-top: 3rem;
   text-align: center;
@@ -144,6 +198,7 @@ const CurrentStack = styled.div`
   & h2 {
     font-weight: var(--semiBold);
     font-size: 1.5rem;
+    margin-top: 0;
 
     ${({ theme }) => theme.mixins.selection(undefined, 'white')}
   }
@@ -170,7 +225,6 @@ const CurrentStack = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.small} {
-    margin-top: 6rem;
     padding: 3rem;
 
     & h2 {
@@ -193,8 +247,6 @@ const CurrentStack = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    margin-top: 8rem;
-
     & h2 {
       font-size: 2.7rem;
     }
@@ -206,8 +258,6 @@ const CurrentStack = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.large} {
-    margin-top: 10rem;
-
     & h2 {
       font-size: 3.3rem;
     }
@@ -220,7 +270,6 @@ const CurrentStack = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.largest} {
-    margin-top: 6rem;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -244,8 +293,14 @@ const About = () => {
         childMarkdownRemark {
           frontmatter {
             currentStack
+            resume
           }
           htmlAst
+        }
+      }
+      site {
+        siteMetadata {
+          link
         }
       }
     }
@@ -264,6 +319,11 @@ const About = () => {
         <SectionName colorstyle="normal">About me</SectionName>
         <Wrapper>
           <StyledContent>{renderAst(data.file.childMarkdownRemark.htmlAst)}</StyledContent>
+          <ButtonWrapper>
+            <ResumeButton href={`${data.site.siteMetadata.link}/${data.file.childMarkdownRemark.frontmatter.resume}`}>
+              Resume
+            </ResumeButton>
+          </ButtonWrapper>
           <CurrentStack>
             <h2>My current stack of technologies:</h2>
             <p>{data.file.childMarkdownRemark.frontmatter.currentStack}</p>
