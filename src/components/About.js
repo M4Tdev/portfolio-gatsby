@@ -320,7 +320,11 @@ const About = () => {
         <Wrapper>
           <StyledContent>{renderAst(data.file.childMarkdownRemark.htmlAst)}</StyledContent>
           <ButtonWrapper>
-            <ResumeButton href={`${data.site.siteMetadata.link}/${data.file.childMarkdownRemark.frontmatter.resume}`}>
+            <ResumeButton
+              href={`${data.site.siteMetadata.link}/${data.file.childMarkdownRemark.frontmatter.resume}`}
+              target="_blank"
+              rel="nofollow"
+            >
               Resume
             </ResumeButton>
           </ButtonWrapper>
