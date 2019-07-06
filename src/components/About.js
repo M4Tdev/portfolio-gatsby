@@ -56,12 +56,8 @@ const Wrapper = styled.div`
     margin-top: 8rem;
   }
 
-  @media ${({ theme }) => theme.mediaQueries.large} {
-    margin-top: 12rem;
-  }
-
   @media ${({ theme }) => theme.mediaQueries.largest} {
-    margin-top: 5rem;
+    margin-top: 3rem;
     width: 60%;
   }
 `;
@@ -263,7 +259,7 @@ const CurrentStack = styled.div`
     }
 
     & p {
-      margin-top: 4rem;
+      margin-bottom: 2rem;
       font-size: 2.8rem;
       line-height: 3.6rem;
     }
