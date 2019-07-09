@@ -318,6 +318,8 @@ const About = () => {
           <ButtonWrapper>
             <ResumeButton
               href={`${data.site.siteMetadata.link}/${data.file.childMarkdownRemark.frontmatter.en_resume}`}
+              target="_blank"
+              rel="nofollow"
             >
               Resume
             </ResumeButton>
