@@ -289,7 +289,7 @@ const About = () => {
         childMarkdownRemark {
           frontmatter {
             currentStack
-            resume
+            en_resume
           }
           htmlAst
         }
@@ -316,7 +316,9 @@ const About = () => {
         <Wrapper>
           <StyledContent>{renderAst(data.file.childMarkdownRemark.htmlAst)}</StyledContent>
           <ButtonWrapper>
-            <ResumeButton href={`${data.site.siteMetadata.link}/${data.file.childMarkdownRemark.frontmatter.resume}`}>
+            <ResumeButton
+              href={`${data.site.siteMetadata.link}/${data.file.childMarkdownRemark.frontmatter.en_resume}`}
+            >
               Resume
             </ResumeButton>
           </ButtonWrapper>
