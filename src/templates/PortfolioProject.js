@@ -149,6 +149,11 @@ const ProjectLinkWrapper = styled.div`
   justify-content: space-evenly;
   margin: 2rem auto 0;
 
+  @supports (-ms-flow-from: thingy) {
+    /* Edge only */
+    justify-content: space-around;
+  }
+
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     margin-top: 2rem;
     width: 75%;

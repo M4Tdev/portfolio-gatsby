@@ -119,6 +119,11 @@ const ContactSocialAccounts = styled.div`
   align-items: center;
   margin-top: 7rem;
 
+  @supports (-ms-flow-from: thingy) {
+    /* Edge only */
+    justify-content: space-around;
+  }
+
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     margin-top: 7.5rem;
   }
