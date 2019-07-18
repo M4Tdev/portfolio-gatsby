@@ -111,24 +111,24 @@ const smoothMovement = keyframes`
 const StyledArrow = styled(ChevronDown)`
   color: white;
   display: block;
-  min-height: 3rem;
-  min-width: 2rem;
+  height: 2rem;
+  width: 2rem;
   cursor: pointer;
   animation: ${smoothMovement} 1s infinite;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
-    min-height: 4rem;
-    min-width: 3rem;
+    height: 4rem;
+    width: 3rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    min-height: 5rem;
-    min-width: 4rem;
+    height: 5rem;
+    width: 4rem;
   }
 
   @media ${({ theme }) => theme.mediaQueries.largest} {
-    min-height: 3.5rem;
-    min-width: 2.5rem;
+    height: 3.5rem;
+    width: 2.5rem;
   }
 `;
 
