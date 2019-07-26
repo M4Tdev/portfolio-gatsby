@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: 'Mateusz Lesiuk | Front-End Developer',
     author: 'Mateusz Lesiuk',
-    description: 'Portfolio of Mateusz Lesiuk the Front-End Developer',
+    description: 'Portfolio of Mateusz Lesiuk a Front-End Developer',
     link: 'https://mateuszlesiuk.dev',
   },
   plugins: [
