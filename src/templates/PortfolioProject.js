@@ -13,7 +13,6 @@ const ProjectTitle = styled.h2`
   position: relative;
   font-size: 1.6rem;
   font-weight: var(--semiBold);
-  font-style: italic;
   margin: 2rem auto 2rem;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
