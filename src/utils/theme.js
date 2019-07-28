@@ -20,10 +20,15 @@ const theme = {
     largest: 'only screen and (min-width: 90em)',
   },
   mixins: {
-    link: borderColor =>
-      `text-decoration: none; border-bottom: 1px solid ${borderColor}; color: #404d5b; padding: 0.2rem 0.1rem; transition: border-color 0.3s ease, background-color 0.3s ease; &:hover {
+    link: (borderColor, section = 'about') =>
+      `text-decoration: none;
+      border-bottom: 1px solid ${borderColor};
+      color: ${section === 'about' ? '#404d5b' : '#fff'};
+      padding: ${section === 'about' ? '0.2rem 0.1rem' : '0'};
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+      &:hover {
         border-bottom: 0.1rem solid rgba(52, 73, 94, 0);
-        background-color: rgba(52, 73, 94, 0.1);
+        background-color: ${section === 'about' ? 'rgba(52, 73, 94, 0.1)' : 'rgba(255, 250, 250, 0.3)'};
       } `,
     selection: (backgroundColor = 'grey', color = 'inherit') => `
         &::selection {
