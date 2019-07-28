@@ -84,6 +84,10 @@ const ProjectDescription = styled.div`
   font-weight: var(--regular);
   margin-top: 2rem;
 
+  & a {
+    ${({ theme }) => theme.mixins.link('#fff', 'portfolio')}
+  }
+
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.5rem;
   }
