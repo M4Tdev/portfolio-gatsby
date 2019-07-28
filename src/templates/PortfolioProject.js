@@ -13,7 +13,6 @@ const ProjectTitle = styled.h2`
   position: relative;
   font-size: 1.6rem;
   font-weight: var(--semiBold);
-  font-style: italic;
   margin: 2rem auto 2rem;
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
@@ -84,6 +83,10 @@ const ProjectDescription = styled.div`
   font-size: 1.4rem;
   font-weight: var(--regular);
   margin-top: 2rem;
+
+  & a {
+    ${({ theme }) => theme.mixins.link('#fff', 'portfolio')}
+  }
 
   @media ${({ theme }) => theme.mediaQueries.smallest} {
     font-size: 1.5rem;

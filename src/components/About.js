@@ -79,7 +79,7 @@ const StyledContent = styled.div`
     line-height: 2.5rem;
     cursor: pointer;
 
-    ${({ theme }) => theme.mixins.link('rgba(52, 73, 94, 0.4)')}
+    ${({ theme }) => theme.mixins.link('rgba(52, 73, 94, 0.4)', 'about')}
     ${({ theme }) => theme.mixins.selection(undefined, 'var(--primaryLight)')}
   }
 
