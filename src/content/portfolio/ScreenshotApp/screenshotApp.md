@@ -8,4 +8,4 @@ order: 4
 ---
 
 This Web application takes a screenshot of the website via provided URL, and then allows you to download it.
-The whole [backend](https://github.com/M4Tdev/website-screenshot-app-backend) for this application was created by me and, it is made using Node.JS, Express and Puppeteer.
+[Backend](https://github.com/M4Tdev/website-screenshot-app-backend) for this application was created by me and, it is made using Node.JS, Express and Puppeteer.
