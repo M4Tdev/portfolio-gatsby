@@ -1,5 +1,5 @@
 ---
-currentStack: HTML - CSS - JavaScript - SASS - ReactJS - Redux - MongoDB - Styled Components - CSS Modules - GraphQL - Gatsby - GIT - NPM - Webpack - Babel - Firebase
+currentStack: HTML - CSS - JavaScript - TypeScript - SASS - ReactJS - React Native - Redux - MongoDB - Styled Components - CSS Modules - GraphQL - Gatsby - GIT - NPM - Webpack - Babel - Firebase
 resume: 'resume.pdf'
 pl_resume: 'pl_resume.pdf'
 ---
