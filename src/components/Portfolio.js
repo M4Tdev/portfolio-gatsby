@@ -47,7 +47,10 @@ const Portfolio = () => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/portfolio/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/content/portfolio/" }
+          frontmatter: { shouldShow: { eq: true } }
+        }
         sort: { fields: [frontmatter___order], order: ASC }
       ) {
         edges {
@@ -79,7 +82,10 @@ const Portfolio = () => {
         <PortfolioSection>
           <PortfolioSectionProjects>
             {data.allMarkdownRemark.edges.map(project => (
-              <PortfolioProject key={project.node.frontmatter.title} project={project} />
+              <PortfolioProject
+                key={project.node.frontmatter.title}
+                project={project}
+              />
             ))}
           </PortfolioSectionProjects>
         </PortfolioSection>

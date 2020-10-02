@@ -3,8 +3,9 @@ title: Screenshot App
 stack: React - SASS
 liveLink: https://screenshot-app.mateuszlesiuk.dev
 sourceLink: https://github.com/M4Tdev/website-screenshot-app
-img: "./screenshotApp.png"
+img: './screenshotApp.png'
 order: 4
+shouldShow: false
 ---
 
 This Web application takes a screenshot of the website via provided URL, and then allows you to download it.
