@@ -75,7 +75,12 @@ const Copyright = styled(animated.div)`
   }
 `;
 
-const MobileMenu = props => {
+interface IProps {
+  animate: React.CSSProperties;
+  toggleMenu: (toggle: boolean) => void;
+}
+
+const MobileMenu: React.FC<IProps> = ({ animate, toggleMenu }) => {
   const styles = {
     config: config.stiff,
     from: { transform: 'translateX(-100%)' },
@@ -104,23 +109,23 @@ const MobileMenu = props => {
   });
 
   return (
-    <StyledMobileMenu style={props.animate}>
-      <CloseMenuButton onClick={() => props.toggleMenu(false)}>
+    <StyledMobileMenu style={animate}>
+      <CloseMenuButton onClick={() => toggleMenu(false)}>
         <CloseMenuIcon />
       </CloseMenuButton>
       <MenuInnerWrapper>
         <MenuItem style={firstMenuItem}>
-          <Link to="about" spy smooth onClick={() => props.toggleMenu(false)}>
+          <Link to="about" spy smooth onClick={() => toggleMenu(false)}>
             About me
           </Link>
         </MenuItem>
         <MenuItem style={secondMenuItem}>
-          <Link to="portfolio" spy smooth onClick={() => props.toggleMenu(false)}>
+          <Link to="portfolio" spy smooth onClick={() => toggleMenu(false)}>
             Portfolio
           </Link>
         </MenuItem>
         <MenuItem style={thirdMenuItem}>
-          <Link to="contact" spy smooth onClick={() => props.toggleMenu(false)}>
+          <Link to="contact" spy smooth onClick={() => toggleMenu(false)}>
             Contact
           </Link>
         </MenuItem>

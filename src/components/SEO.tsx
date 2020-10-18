@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Helmet from 'react-helmet';
 
-const SEO = () => {
+const SEO: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -19,7 +19,7 @@ const SEO = () => {
   return (
     <Helmet>
       <title>{data.site.siteMetadata.title}</title>
-      <meta charset="UTF-8" />
+      <meta charSet="UTF-8" />
       <meta name="author" content={data.site.siteMetadata.author} />
       <meta name="description" content={data.site.siteMetadata.description} />
       <link rel="shortcut icon" href="favicon.ico" />

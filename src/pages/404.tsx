@@ -5,7 +5,8 @@ import { Link } from 'gatsby';
 import Layout from '../components/UI/Layout';
 import Navbar from '../components/Navbar';
 
-import Image from '../assets/undraw_page_not_found_su7k.svg';
+// import Image from '../assets/undraw_page_not_found_su7k.svg';
+import Image from '../assets/undraw_Taken_if77.svg';
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -116,8 +117,8 @@ const NotFound = () => (
       <Navbar />
       <Message>
         <StyledImage />
-        <StyledHeading>Upss, something went wrong.</StyledHeading>
-        <StyledLink to="/">Go Home</StyledLink>
+        <StyledHeading>We could not find the page.</StyledHeading>
+        <StyledLink to="/">Go to Home page</StyledLink>
       </Message>
     </Wrapper>
   </Layout>

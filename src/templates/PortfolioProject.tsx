@@ -54,7 +54,7 @@ const ProjectFlexDiv = styled.div`
   }
 `;
 
-const ProjectImage = styled(Img)`
+const ProjectImage = styled(Img)<{ fluid: any }>`
   box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.3);
   width: 100%;
 
@@ -228,19 +228,23 @@ const ProjectLink = styled.a`
   }
 `;
 
-const PortfolioProject = props => (
+interface IProps {
+  project: any;
+}
+
+const PortfolioProject: React.FC<IProps> = ({ project }) => (
   <Project>
-    <ProjectTitle>{props.project.node.frontmatter.title}</ProjectTitle>
+    <ProjectTitle>{project.node.frontmatter.title}</ProjectTitle>
     <ProjectFlexDiv>
-      <ProjectImage fluid={props.project.node.frontmatter.img.childImageSharp.fluid} />
+      <ProjectImage fluid={project.node.frontmatter.img.childImageSharp.fluid} />
       <ProjectContent>
-        <ProjectDescription dangerouslySetInnerHTML={{ __html: props.project.node.html }} />
-        <ProjectStack>{props.project.node.frontmatter.stack}</ProjectStack>
+        <ProjectDescription dangerouslySetInnerHTML={{ __html: project.node.html }} />
+        <ProjectStack>{project.node.frontmatter.stack}</ProjectStack>
         <ProjectLinkWrapper>
-          <ProjectLink href={props.project.node.frontmatter.liveLink} target="_blank" rel="noopener noreferrer">
+          <ProjectLink href={project.node.frontmatter.liveLink} target="_blank" rel="noopener noreferrer">
             Live
           </ProjectLink>
-          <ProjectLink href={props.project.node.frontmatter.sourceLink} target="_blank" rel="noopener noreferrer">
+          <ProjectLink href={project.node.frontmatter.sourceLink} target="_blank" rel="noopener noreferrer">
             Source
           </ProjectLink>
         </ProjectLinkWrapper>

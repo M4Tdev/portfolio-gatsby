@@ -282,7 +282,7 @@ const CurrentStack = styled.div`
   }
 `;
 
-const About = () => {
+const About: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "about.md" }) {
@@ -302,11 +302,13 @@ const About = () => {
     }
   `);
 
-  /* eslint-disable-next-line */
+  /* eslint-disable */
+  // @ts-ignore
   const renderAst = new rehypeReact({
     createElement: React.createElement,
     components: { 'scroll-link': StyledLink },
   }).Compiler;
+  /* eslint-enable */
 
   return (
     <StyledAbout id="about">
