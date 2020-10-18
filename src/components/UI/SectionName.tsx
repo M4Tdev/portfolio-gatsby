@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledDiv = styled.div`
+interface IProps {
+  customMargin?: string;
+  colorstyle?: string;
+}
+
+const StyledDiv = styled.div<{ colorstyle?: string; customMargin?: string }>`
   width: 12rem;
   height: 4rem;
   background-color: transparent;
@@ -21,7 +26,7 @@ const StyledDiv = styled.div`
     z-index: -1;
     width: inherit;
     height: inherit;
-    background-color: ${props => (props.colorstyle === 'normal' ? 'var(--primaryLight)' : 'white')};
+    background-color: ${(props) => (props.colorstyle === 'normal' ? 'var(--primaryLight)' : 'white')};
   }
 
   @media ${({ theme }) => theme.mediaQueries.smallMedium} {
@@ -37,12 +42,12 @@ const StyledDiv = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.largest} {
-    margin: ${props => props.customMargin || '7rem 0 0 8rem'};
+    margin: ${(props) => props.customMargin || '7rem 0 0 8rem'};
   }
 `;
 
-const StyledParagraph = styled.p`
-  color: ${props => (props.colorstyle === 'normal' ? 'white' : 'var(--customBlack)')};
+const StyledParagraph = styled.p<{ colorstyle?: string }>`
+  color: ${(props) => (props.colorstyle === 'normal' ? 'white' : 'var(--customBlack)')};
   font-size: 1.6rem;
   font-weight: var(--bold);
   position: relative;
@@ -56,9 +61,9 @@ const StyledParagraph = styled.p`
   }
 `;
 
-const SectionName = props => (
-  <StyledDiv customMargin={props.customMargin} colorstyle={props.colorstyle}>
-    <StyledParagraph colorstyle={props.colorstyle}>{props.children}</StyledParagraph>
+const SectionName: React.FC<IProps> = ({ customMargin, colorstyle, children }) => (
+  <StyledDiv customMargin={customMargin} colorstyle={colorstyle}>
+    <StyledParagraph colorstyle={colorstyle}>{children}</StyledParagraph>
   </StyledDiv>
 );
 

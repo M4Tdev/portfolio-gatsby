@@ -10,11 +10,11 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const Layout = props => (
+const Layout: React.FC = ({ children }) => (
   <ThemeProvider theme={theme}>
     <Wrapper>
       <GlobalStyles />
-      {props.children}
+      {children}
       <GoToTopButton />
     </Wrapper>
   </ThemeProvider>

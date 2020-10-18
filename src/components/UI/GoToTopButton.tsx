@@ -70,7 +70,7 @@ const StyledChevron = styled(ChevronUp)`
   fill: currentColor;
 `;
 
-const GoToTopButton = () => {
+const GoToTopButton: React.FC = () => {
   const [showToTop, setShowToTop] = useState(false);
 
   const displayButton = () => {

@@ -132,7 +132,7 @@ const StyledArrow = styled(ChevronDown)`
   }
 `;
 
-const Hero = () => {
+const Hero: React.FC = () => {
   const heroSectionHeight = () => {
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);

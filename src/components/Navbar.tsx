@@ -94,7 +94,7 @@ const StyledBurger = styled(Bars)`
   fill: currentColor;
 `;
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [isMenuOpen, toggleMenu] = useState(false);
   const [isMobile, setMobile] = useState(null);
 

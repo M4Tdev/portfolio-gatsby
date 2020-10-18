@@ -236,7 +236,7 @@ const FooterCopyright = styled.span`
   }
 `;
 
-const Contact = () => {
+const Contact: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "contact.md" }) {

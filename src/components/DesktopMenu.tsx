@@ -92,7 +92,7 @@ const ListItem = styled(animated.li)`
   }
 `;
 
-const DesktopMenu = () => {
+const DesktopMenu: React.FC = () => {
   const states = {
     config: config.wobbly,
     from: { transform: 'translateY(-300%)', opacity: 0 },

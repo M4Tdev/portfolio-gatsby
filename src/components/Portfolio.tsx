@@ -43,14 +43,11 @@ const PortfolioSectionProjects = styled.div`
   justify-content: center;
 `;
 
-const Portfolio = () => {
+const Portfolio: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
-        filter: {
-          fileAbsolutePath: { regex: "/content/portfolio/" }
-          frontmatter: { shouldShow: { eq: true } }
-        }
+        filter: { fileAbsolutePath: { regex: "/content/portfolio/" }, frontmatter: { shouldShow: { eq: true } } }
         sort: { fields: [frontmatter___order], order: ASC }
       ) {
         edges {
@@ -81,11 +78,8 @@ const Portfolio = () => {
         <SectionName colorstyle="opposed">Portfolio</SectionName>
         <PortfolioSection>
           <PortfolioSectionProjects>
-            {data.allMarkdownRemark.edges.map(project => (
-              <PortfolioProject
-                key={project.node.frontmatter.title}
-                project={project}
-              />
+            {data.allMarkdownRemark.edges.map((project) => (
+              <PortfolioProject key={project.node.frontmatter.title} project={project} />
             ))}
           </PortfolioSectionProjects>
         </PortfolioSection>
