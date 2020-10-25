@@ -3,6 +3,8 @@ import styled, { keyframes } from 'styled-components';
 import { ChevronDown } from 'styled-icons/fa-solid';
 import { Link } from 'react-scroll';
 import { useSpring, animated, config } from 'react-spring';
+import Particles from 'react-particles-js';
+import particlesConfig from '../config/particlesConfig';
 
 import Navbar from './Navbar';
 
@@ -16,6 +18,10 @@ const StyledHero = styled.div`
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: '.' '.' '.';
   position: relative;
+`;
+
+const ParticlesWrapper = styled.div`
+  position: absolute;
 `;
 
 const StyledHeader = styled(animated.h1)`
@@ -172,6 +178,9 @@ const Hero: React.FC = () => {
 
   return (
     <StyledHero id="hero">
+      <ParticlesWrapper>
+        <Particles height="100vh" width="100vw" params={particlesConfig as any} />
+      </ParticlesWrapper>
       <Navbar />
       <StyledHeader>
         <AnimatedSpan style={firstSlideInFromLeft}>
